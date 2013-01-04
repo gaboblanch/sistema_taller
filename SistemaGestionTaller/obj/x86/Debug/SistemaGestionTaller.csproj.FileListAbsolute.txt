@@ -1,0 +1,199 @@
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\crFactura.rpt
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\crFactura.cs
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.exe.config
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.exe
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.pdb
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\System.Windows.Forms.Calendar.dll
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\System.Windows.Forms.Calendar.pdb
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.Form1.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarCliente.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarEgreso.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarGarantia.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIngreso.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIva.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarProveedor.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarReparacion.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarRepuestoStock.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarRepuestoUnico.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarStock.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarStockSalida.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTarea.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoCuenta.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoGas.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTurnos.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarVehiculo.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarVentaRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarCliente.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarGas.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarProveedor.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarRepuestoStock.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarTarea.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarVehiculo.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmCajaDiaria.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmCambiarTipo.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmFactura.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionBD.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionCliente.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionDeudasOT.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionEgresos.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionGarantia.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionIngresos.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionIva.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionPresupuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionProveedor.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionReparacion.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTarea.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoCuenta.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoGas.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmLibroContable.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmTipoRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionVentaRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestiónRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmImprimirReporte.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioProveedor.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioTodosRepuestos.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.Properties.Resources.resources
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.exe
+E:\DOCUMENTOS GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.pdb
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\crFactura.rpt
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\crFactura.cs
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.exe.config
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.exe
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.pdb
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\System.Windows.Forms.Calendar.dll
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\System.Windows.Forms.Calendar.pdb
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\Interop.CrystalActiveXReportViewerLib13.dll
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.csproj.ResolveComReference.cache
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.Form1.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarCliente.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarEgreso.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarGarantia.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIngreso.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIva.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarProveedor.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarReparacion.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarRepuestoStock.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarRepuestoUnico.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarStock.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarStockSalida.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTarea.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoCuenta.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoGas.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTurnos.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarVehiculo.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarVentaRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarCliente.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarGas.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarProveedor.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarRepuestoStock.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarTarea.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarVehiculo.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmCajaDiaria.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmCambiarTipo.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmFactura.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionBD.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionCliente.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionDeudasOT.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionEgresos.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionGarantia.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionIngresos.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionIva.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionPresupuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionProveedor.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionReparacion.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTarea.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoCuenta.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoGas.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmLibroAnual.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmLibroContable.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioPorMarca.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmTipoRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionVentaRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestiónRepuesto.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmImprimirReporte.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioProveedor.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioTodosRepuestos.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.Properties.Resources.resources
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.exe
+E:\DOCUMENTOS DE GABRIEL\Documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.pdb
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.exe.config
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.exe
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\SistemaGestionTaller.pdb
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\System.Windows.Forms.Calendar.dll
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\bin\Debug\System.Windows.Forms.Calendar.pdb
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\Interop.CrystalActiveXReportViewerLib13.dll
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.csproj.ResolveComReference.cache
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.Form1.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarCliente.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarEgreso.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarEgresoGlobal.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarGarantia.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIngreso.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIngresoGlobal.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarIva.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarProveedor.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarReparacion.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarRepuestoStock.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarRepuestoUnico.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarStock.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarStockSalida.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTarea.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoCuenta.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoGas.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTipoRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarTurnos.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarVehiculo.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmAgregarEditarVentaRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarCliente.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarGas.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarProveedor.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarRepuestoStock.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarTarea.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmBuscarVehiculo.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmCajaDiaria.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmCambiarTipo.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmFactura.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionBD.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionCliente.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionDeudasOT.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionEgresos.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionGarantia.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionGlobal.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionIngresos.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionIva.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionPresupuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionProveedor.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionReparacion.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTarea.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoCuenta.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoGas.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionTipoRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmIniciarCajaDiaria.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmLibroAnual.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmLibroContable.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioPorMarca.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmTipoRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestionVentaRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmGestiónRepuesto.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmImprimirReporte.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioProveedor.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.frmPrecioTodosRepuestos.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.Properties.Resources.resources
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.exe
+E:\DOCUMENTOS GABRIEL\Mis documentos\Visual Studio 2010\Projects\SistemaGestionTaller\SistemaGestionTaller\obj\x86\Debug\SistemaGestionTaller.pdb
