@@ -74,9 +74,9 @@ namespace SistemaGestionTaller
             //DATAGRID
             foreach (DataGridViewRow row in this.dataGridReparacion.Rows)
             {
-                if (row.Cells["importe"].Value != null)
+                if (row.Cells["saldo"].Value != null)
                 {
-                    importeFinal += Convert.ToDouble(row.Cells["importe"].Value);
+                    importeFinal += Convert.ToDouble(row.Cells["saldo"].Value);
                 }
             }
             this.textBoxTotalImporte.Text = "$ " + importeFinal;

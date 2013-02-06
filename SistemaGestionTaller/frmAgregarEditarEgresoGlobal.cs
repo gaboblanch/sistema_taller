@@ -66,7 +66,6 @@ namespace SistemaGestionTaller
         private void frmAgregarEditarEgresoGlobal_Load(object sender, EventArgs e)
         {
             egreso = new GlobalEgreso();
-
             if (flagEditar)
             {
                 egreso.IdEgreso = this.idEgreso;

@@ -35,6 +35,7 @@ namespace SistemaGestionTaller
         private double chequeTotal;
         private double globalTotal;
         private double tarjetaTotal;
+        private double todoTotal;
 
 
         public frmGestionGlobal()
@@ -49,6 +50,7 @@ namespace SistemaGestionTaller
             this.textChequeTotal.Text = (chequeTotal + chequeIngreso - chequeEgreso).ToString("0.00").Insert(0, "$"); ;
             this.textGlobalTotal.Text = (globalTotal + globalIngreso - globalEgreso).ToString("0.00").Insert(0, "$"); ;
             this.textTarjetaTotal.Text = (tarjetaTotal + tarjetaIngreso).ToString("0.00").Insert(0, "$"); ;
+            this.textTotalTotal.Text = (efectivoTotal + efectivoIngreso - efectivoEgreso + bancoTotal + bancoIngreso - bancoEgreso + chequeTotal + chequeIngreso - chequeEgreso + globalTotal + globalIngreso - globalEgreso + tarjetaTotal + tarjetaIngreso).ToString("0.00").Insert(0, "$"); ;
         }
 
         private void calcularIngresos()
@@ -325,7 +327,8 @@ namespace SistemaGestionTaller
 
         private void buttonEditarEgreso_Click(object sender, EventArgs e)
         {
-            frmAgregarEditarEgresoGlobal faee = new frmAgregarEditarEgresoGlobal();
+            int r = this.dataGridEgreso.CurrentCell.RowIndex;
+            frmAgregarEditarEgresoGlobal faee = new frmAgregarEditarEgresoGlobal(Convert.ToInt32(this.dataGridEgreso.Rows[r].Cells["idegreso"].Value));
             faee.actualizarDataGridEvento += new frmAgregarEditarEgresoGlobal.actualizarDataGrid(llenarEgresos);
             faee.MdiParent = this.MdiParent;
             faee.Show();
@@ -405,5 +408,11 @@ namespace SistemaGestionTaller
             this.buttonTerminar.PerformClick();
         }
 
+        private void buttonActualizar_Click(object sender, EventArgs e)
+        {
+            this.calcular();
+        }
+
+    
     }
 }

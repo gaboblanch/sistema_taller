@@ -286,7 +286,7 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
             ArrayList colReparacion = new ArrayList();
 
-            SQL_p = "SELECT repuestoventa.*, repuestostock.descripcion, repuestostock.marca, repuestostock.modelo, repuestostock.precio, repuestostock.cantidad " +
+            SQL_p = "SELECT repuestoventa.*, repuestostock.codigorepuesto, repuestostock.descripcion, repuestostock.marca, repuestostock.modelo, repuestostock.precio, repuestostock.cantidad " +
                     "FROM repuestoventa INNER JOIN repuestostock " +
                     "ON repuestoventa.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "WHERE repuestoventa.ventarepuesto_idventarepuesto = '" + IdVentaRepuesto + "'";
@@ -300,6 +300,7 @@ namespace SistemaGestionTaller
                 objRepuestoLocal.IdRepuestoReparacion = Reader.GetInt32("idrepuestoventa");
                 objRepuestoLocal.IdRepuesto = Reader.GetInt32("repuestostock_idrepuestostock");
                 objRepuestoLocal.DescripcionRepuesto = Reader.GetString("descripcion");
+                objRepuestoLocal.CodigoRepuesto = Reader.GetString("codigorepuesto");
                 objRepuestoLocal.Marca = Reader.GetString("marca");
                 objRepuestoLocal.Modelo = Reader.GetString("modelo");
                 objRepuestoLocal.PrecioUnitario = Reader.GetDouble("precio");

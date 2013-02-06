@@ -184,8 +184,8 @@ namespace SistemaGestionTaller
             SQL_p = "SELECT reparacion.*, vehiculo.dominio, vehiculo.marca, vehiculo.modelo, cliente.razonsocial " +
                     "FROM reparacion INNER JOIN cliente INNER JOIN vehiculo " +
                     "ON reparacion.vehiculo_idvehiculo = vehiculo.idvehiculo AND reparacion.cliente_idcliente = cliente.idcliente " +
-                    "WHERE cliente.razonsocial LIKE '%" + Cliente.Filtro + "%' AND reparacion.estado = '1' OR reparacion.estado = '2' OR reparacion.estado = '4' " +
-                    "GROUP BY reparacion.idreparacion " +
+                    "WHERE reparacion.estado = '1' OR reparacion.estado = '2' OR reparacion.estado = '4' " +
+                    "GROUP BY reparacion.idreparacion HAVING cliente.razonsocial LIKE '%" + Cliente.Filtro + "%'" +
                     "ORDER BY reparacion.fecha DESC";
 
             Reader = Conector.consultar(SQL_p);
@@ -378,6 +378,53 @@ namespace SistemaGestionTaller
 
         }
 
+        public ArrayList coleccionMarca(string fechaInicio, string fechaFin)
+        {
+            string SQL_p;
+            MySqlDataReader Reader;
+            ArrayList colReparacion = new ArrayList();
+
+            SQL_p = "SELECT reparacion.*, vehiculo.dominio, vehiculo.marca, vehiculo.modelo, cliente.razonsocial " +
+                    "FROM reparacion INNER JOIN cliente INNER JOIN vehiculo " +
+                    "ON reparacion.vehiculo_idvehiculo = vehiculo.idvehiculo AND reparacion.cliente_idcliente = cliente.idcliente " +
+                    "WHERE (vehiculo.marca LIKE '%" + Cliente.Filtro + "%' OR vehiculo.modelo LIKE '%" + Cliente.Filtro + "%') AND reparacion.estado != '" + Estado + "' AND reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
+                    "GROUP BY reparacion.idreparacion " +
+                    "ORDER BY reparacion.fecha, reparacion.idreparacion DESC ";
+
+            Reader = Conector.consultar(SQL_p);
+
+            while (Reader.Read())
+            {
+                Reparacion objReparacioLocal = new Reparacion();
+
+                //DATOS REPARACION
+                objReparacioLocal.IdReparacion = Reader.GetInt32("idreparacion");
+                objReparacioLocal.ImporteTotal = Reader.GetDouble("importe");
+                objReparacioLocal.Fecha = Reader.GetDateTime("fecha");
+                objReparacioLocal.FechaSistema = Reader.GetDateTime("fechasistema");
+                objReparacioLocal.Descripcion = Reader.GetString("descripcion");
+                objReparacioLocal.Estado = Reader.GetInt32("estado");
+                objReparacioLocal.EstadoAnterior = Reader.GetInt32("estado");
+                objReparacioLocal.CodigoReparacion = Reader.GetString("codigoreparacion");
+
+                //DATOS VEHICULO
+                objReparacioLocal.Vehiculo.Id = Reader.GetInt32("vehiculo_idvehiculo");
+                objReparacioLocal.Vehiculo.Dominio = Reader.GetString("dominio");
+                objReparacioLocal.Vehiculo.Marca = Reader.GetString("marca");
+                objReparacioLocal.Vehiculo.Modelo = Reader.GetString("modelo");
+
+                //DATOS CLIENTE
+                objReparacioLocal.Cliente.Id = Reader.GetInt32("cliente_idcliente");
+                objReparacioLocal.Cliente.NombreRazonSocial = Reader.GetString("razonsocial");
+                //objReparacioLocal.Cliente.Deuda = Reader.GetDouble("saldo");
+
+                colReparacion.Add(objReparacioLocal);
+            }
+
+            Reader.Close();
+            return colReparacion;
+
+        }
 
         /// <summary>
         /// Presupuesto buscamos con condicion igual a un estado

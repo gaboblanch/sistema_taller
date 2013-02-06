@@ -133,12 +133,23 @@ namespace SistemaGestionTaller
             ArrayList colSumas = new ArrayList();
             double banco, cheque, global, tarjeta, efectivo;
 
-            SQL_p = "SELECT DISTINCT  "+
+           /* 
+            * CODIGO ORIGINAL
+            * SQL_p = "SELECT DISTINCT  "+
                     "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='EFECTIVO' AND fechaingreso = '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS efectivo, " +
                     "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='BANCO' AND fechaingreso = '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS banco, " +
                     "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='CHEQUE' AND fechaingreso = '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS cheque, " +
                     "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='GLOBAL' AND fechaingreso = '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS 'global', " +
                     "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='TARJETA' AND fechaingreso = '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS tarjeta ";
+            */
+
+            /*CODIGO ACTUALIZADO*/
+            SQL_p = "SELECT DISTINCT  " +
+                    "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='EFECTIVO' AND fechaingreso <= '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS efectivo, " +
+                    "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='BANCO' AND fechaingreso <= '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS banco, " +
+                    "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='CHEQUE' AND fechaingreso <= '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS cheque, " +
+                    "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='GLOBAL' AND fechaingreso <= '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS 'global', " +
+                    "IFNULL((SELECT importeingreso FROM globalingresos WHERE tipo='TARJETA' AND fechaingreso <= '" + fecha + "' AND descripcioningreso = 'Inicialización' ORDER BY globalingresos.idglobalingresos DESC LIMIT 1),0) AS tarjeta ";
 
             Reader = Conector.consultar(SQL_p);
 

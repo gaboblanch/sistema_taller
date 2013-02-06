@@ -94,6 +94,9 @@
             this.textBancoTotal = new System.Windows.Forms.TextBox();
             this.textEfectivoTotal = new System.Windows.Forms.TextBox();
             this.buttonTerminar = new System.Windows.Forms.Button();
+            this.buttonActualizar = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textTotalTotal = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridIngreso)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -101,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEgreso)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -470,6 +474,7 @@
             this.dataGridEgreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridEgreso.Size = new System.Drawing.Size(433, 393);
             this.dataGridEgreso.TabIndex = 58;
+            //this.dataGridEgreso.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridEgreso_CellContentClick);
             // 
             // idegreso
             // 
@@ -641,7 +646,7 @@
             this.groupBox5.Controls.Add(this.textBancoTotal);
             this.groupBox5.Controls.Add(this.textEfectivoTotal);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(165, 566);
+            this.groupBox5.Location = new System.Drawing.Point(12, 566);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(632, 63);
             this.groupBox5.TabIndex = 66;
@@ -748,11 +753,43 @@
             this.buttonTerminar.UseVisualStyleBackColor = true;
             this.buttonTerminar.Click += new System.EventHandler(this.buttonTerminar_Click);
             // 
+            // buttonActualizar
+            // 
+            this.buttonActualizar.BackgroundImage = global::SistemaGestionTaller.Properties.Resources.actualizar_restaure_agt_icono_7628_16;
+            this.buttonActualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonActualizar.Location = new System.Drawing.Point(223, 29);
+            this.buttonActualizar.Name = "buttonActualizar";
+            this.buttonActualizar.Size = new System.Drawing.Size(34, 36);
+            this.buttonActualizar.TabIndex = 68;
+            this.buttonActualizar.UseVisualStyleBackColor = true;
+            this.buttonActualizar.Click += new System.EventHandler(this.buttonActualizar_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.textTotalTotal);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(653, 566);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(164, 63);
+            this.groupBox6.TabIndex = 69;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "TOTAL";
+            // 
+            // textTotalTotal
+            // 
+            this.textTotalTotal.Location = new System.Drawing.Point(34, 27);
+            this.textTotalTotal.Name = "textTotalTotal";
+            this.textTotalTotal.ReadOnly = true;
+            this.textTotalTotal.Size = new System.Drawing.Size(100, 21);
+            this.textTotalTotal.TabIndex = 0;
+            // 
             // frmGestionGlobal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 641);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.buttonActualizar);
             this.Controls.Add(this.buttonTerminar);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -776,6 +813,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -846,5 +885,8 @@
         private System.Windows.Forms.TextBox textBancoTotal;
         private System.Windows.Forms.TextBox textEfectivoTotal;
         private System.Windows.Forms.Button buttonTerminar;
+        private System.Windows.Forms.Button buttonActualizar;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox textTotalTotal;
     }
 }

@@ -1227,61 +1227,33 @@ namespace SistemaGestionTaller
                     );
             }
 
+            //Los pongo vacios porque en una Venta de Respuestos no se utilizan estos datos
             dsFactura.Vehiculo.Rows.Add(
-                factura.Reparacion.Vehiculo.Dominio,
-                factura.Reparacion.Vehiculo.Modelo,
-                factura.Reparacion.Vehiculo.Marca,
-                factura.Reparacion.Vehiculo.Anio
+                "",//Dominio
+                "",//Modelo
+                "",//Marca
+                "" //Anio
                 );
 
-            if (factura.Reparacion.DetalleRepuestos.Count != 0)
+            if (factura.VentaRepuesto.DetalleRepuestos.Count != 0)
             {
-                for (int i = 0; i < factura.Reparacion.DetalleRepuestos.Count; i++)
+                for (int i = 0; i < factura.VentaRepuesto.DetalleRepuestos.Count; i++)
                 {
                     dsFactura.TablaRepuestos.Rows.Add(
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).CantidadRequerida.ToString(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).CodigoRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).DescripcionRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioUnitario.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioTotal.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioTotal.ToString("0.00")
+                        ((RepuestoReparacion)factura.VentaRepuesto.DetalleRepuestos[i]).CantidadRequerida.ToString(),
+                        ((RepuestoReparacion)factura.VentaRepuesto.DetalleRepuestos[i]).CodigoRepuesto.ToString().ToUpper(),
+                        ((RepuestoReparacion)factura.VentaRepuesto.DetalleRepuestos[i]).DescripcionRepuesto.ToString().ToUpper(),
+                        ((RepuestoReparacion)factura.VentaRepuesto.DetalleRepuestos[i]).PrecioUnitario.ToString("0.00"),
+                        ((RepuestoReparacion)factura.VentaRepuesto.DetalleRepuestos[i]).PrecioTotal.ToString("0.00"),
+                        ((RepuestoReparacion)factura.VentaRepuesto.DetalleRepuestos[i]).PrecioTotal.ToString("0.00")
                         );
                 }
             }
 
-            if (factura.Reparacion.DetalleCargas.Count != 0)
-            {
-                for (int i = 0; i < factura.Reparacion.DetalleCargas.Count; i++)
-                {
-                    dsFactura.TablaRepuestos.Rows.Add(
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CantidadRequerida.ToString(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CodigoRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).DescripcionRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioUnitario.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00")
-                        );
-                }
-            }
 
-            if (factura.Reparacion.DetalleTarea.Count != 0)
+            if (factura.VentaRepuesto.DetalleRepuestos.Count < 9)
             {
-                for (int i = 0; i < factura.Reparacion.DetalleTarea.Count; i++)
-                {
-                    dsFactura.TablaRepuestos.Rows.Add(
-                        1,
-                        "",
-                        ((TareaReparacion)factura.Reparacion.DetalleTarea[i]).DescripcionTarea.ToString().ToUpper(),
-                        ((TareaReparacion)factura.Reparacion.DetalleTarea[i]).CostoTotal.ToString("0.00"),
-                        ((TareaReparacion)factura.Reparacion.DetalleTarea[i]).Costo.ToString("0.00"),
-                        ((TareaReparacion)factura.Reparacion.DetalleTarea[i]).Costo.ToString("0.00")
-                        );
-                }
-            }
-
-            if ((factura.Reparacion.DetalleRepuestos.Count + factura.Reparacion.DetalleCargas.Count + factura.Reparacion.DetalleTarea.Count) < 8)
-            {
-                int items = 8 - (factura.Reparacion.DetalleRepuestos.Count + factura.Reparacion.DetalleCargas.Count + factura.Reparacion.DetalleTarea.Count);
+                int items = 9 - factura.VentaRepuesto.DetalleRepuestos.Count;
                 for (int i = 0; i < items; i++)
                 {
                     dsFactura.TablaRepuestos.Rows.Add(
@@ -1299,7 +1271,8 @@ namespace SistemaGestionTaller
 
             try
             {
-                oRep.Load("E:/DOCUMENTOS GABRIEL/Documentos/Visual Studio 2010/Projects/SistemaGestionTaller/SistemaGestionTaller/CrystalReport1.rpt");
+                //oRep.Load("E:/DOCUMENTOS GABRIEL/Documentos/Visual Studio 2010/Projects/SistemaGestionTaller/SistemaGestionTaller/CrystalReport1.rpt");
+                oRep.Load("E:\\DOCUMENTOS GABRIEL\\Mis documentos\\GitHub\\lukatorepo\\SistemaGestionTaller\\CrystalReport1.rpt");
             }
             catch
             {

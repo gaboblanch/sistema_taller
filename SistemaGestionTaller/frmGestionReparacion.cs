@@ -42,6 +42,7 @@ namespace SistemaGestionTaller
         private void calcular()
         {
             double importeFinal=0;
+            double saldoFinal = 0;
             //DATAGRID
             foreach (DataGridViewRow row in this.dataGridReparacion.Rows)
             {
@@ -49,8 +50,13 @@ namespace SistemaGestionTaller
                 {
                     importeFinal += Convert.ToDouble(row.Cells["importe"].Value);
                 }
+                if (row.Cells["saldo"].Value != null)
+                {
+                    saldoFinal += Convert.ToDouble(row.Cells["saldo"].Value);
+                }
             }
             this.textBoxTotalImporte.Text = "$ " + importeFinal;
+            this.textBoxTotalSaldo.Text = "$ " + saldoFinal;
         }
 
         private void llenarDataGrid()
@@ -61,7 +67,7 @@ namespace SistemaGestionTaller
             this.buttonGarantia.Enabled = false;
 
             ArrayList colReparacion = new ArrayList();
-            reparacion.Cliente.Filtro = this.textFiltro.Text;
+            //reparacion.Cliente.Filtro = this.textFiltro.Text;
             reparacion.Estado = 0;
 
             if (this.checkBoxTodas.Checked)
@@ -75,33 +81,42 @@ namespace SistemaGestionTaller
                 fin = String.Format("{0:yyyy/MM/dd}", dateTimePickerFin.Value);
             }
 
-            if (this.comboBoxBuscar.SelectedIndex == 0)
+           if (this.textFiltro.Text != "")
             {
-                colReparacion = reparacion.coleccion(
-                                                    inicio,
-                                                    fin);
+                //BUSCAR POR NRO DE FACTURA
+                reparacion.Cliente.Filtro = this.textFiltro.Text;
+                colReparacion = reparacion.coleccionFactura(inicio,fin);
             }
-            else if (this.comboBoxBuscar.SelectedIndex == 1)
+            
+            else if (this.textBoxDominio.Text != "")
             {
-                colReparacion = reparacion.coleccionDominio(
-                                                    inicio,
-                                                    fin);
+                //BUSCAR POR NRO DE DOMINIO
+                reparacion.Cliente.Filtro = this.textBoxDominio.Text;
+                colReparacion = reparacion.coleccionDominio(inicio, fin);
             }
-            else if (this.comboBoxBuscar.SelectedIndex == 2)
+            else if (this.textBoxReparacion.Text != "")
             {
-                colReparacion = reparacion.coleccionFactura(
-                                                    inicio,
-                                                    fin);
+                //BUSCAR POR NRO DE REPARACION
+                reparacion.Cliente.Filtro = this.textBoxReparacion.Text;
+                colReparacion = reparacion.coleccionCodigoReparacion(inicio, fin);
             }
-            else if (this.comboBoxBuscar.SelectedIndex == 3)
+           else if (this.textBoxMarca.Text != "")
+           {
+               //BUSCAR POR MARCA
+               reparacion.Cliente.Filtro = this.textBoxMarca.Text;
+               colReparacion = reparacion.coleccionMarca(inicio, fin);
+           }
+           else if (this.textBoxModelo.Text != "")
+           {
+               //BUSCAR POR MODELO
+               reparacion.Cliente.Filtro = this.textBoxModelo.Text;
+               colReparacion = reparacion.coleccionMarca(inicio, fin);
+           }
+            else if (this.textBoxNombre.Text != "" || true)
             {
-                colReparacion = reparacion.coleccionCodigoReparacion(
-                                                    inicio,
-                                                    fin);
-            }
-            else
-            {
-                return;
+                //BUSCAR POR NOMBRE
+                reparacion.Cliente.Filtro = this.textBoxNombre.Text;
+                colReparacion = reparacion.coleccion(inicio, fin);
             }
 
             this.dataGridReparacion.Rows.Clear();
@@ -184,7 +199,7 @@ namespace SistemaGestionTaller
             reparacion = new Reparacion();
             factura = new Factura();
 
-            this.comboBoxBuscar.SelectedIndex = 0;
+            //this.comboBoxBuscar.SelectedIndex = 0;
             //INICIALIZAMOS LOS CONTROLES DATETIMEPICKER
             //Seleccionamos el 1er dia del mes
             this.dateTimePickerInicio.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
@@ -406,11 +421,6 @@ namespace SistemaGestionTaller
             }
         }
 
-        private void textFiltro_TextChanged(object sender, EventArgs e)
-        {
-            this.llenarDataGrid();
-        }
-
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
             int r = this.dataGridReparacion.CurrentCell.RowIndex;
@@ -573,5 +583,36 @@ namespace SistemaGestionTaller
             this.llenarDataGrid();
         }
 
+        private void textBoxNombre_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+        private void textBoxDominio_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+        private void textFiltro_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+        private void textBoxReparacion_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+        private void textBoxMarca_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+        private void textBoxModelo_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+               
     }
 }

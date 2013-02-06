@@ -62,8 +62,8 @@ namespace SistemaGestionTaller
         public void actualizar()
         {
             string SQL_p;
-            SQL_p = "UPDATE globalegreso SET tipo='" + Tipo + "', descripcionegreso = '" + Descripcion + "' , importeegreso = '" + Importe + "' , fechaegreso = '" + String.Format("{0:yyyy/MM/dd}", Fecha) + "'" +
-                    "WHERE idglobalegreso = '" + IdEgreso + "'";
+            SQL_p = "UPDATE globalegresos SET tipo='" + Tipo + "', descripcionegreso = '" + Descripcion + "' , importeegreso = '" + Importe + "' , fechaegreso = '" + String.Format("{0:yyyy/MM/dd}", Fecha) + "'" +
+                    "WHERE idglobalegresos = '" + IdEgreso + "'";
 
             Conector.ejecutar(SQL_p);
         }
@@ -71,7 +71,7 @@ namespace SistemaGestionTaller
         public void eliminar()
         {
             string SQL_p;
-            SQL_p = "DELETE FROM globalegreso WHERE idglobalegreso = '" + IdEgreso + "'";
+            SQL_p = "DELETE FROM globalegresos WHERE idglobalegresos = '" + IdEgreso + "'";
 
             Conector.ejecutar(SQL_p);
         }
@@ -81,7 +81,7 @@ namespace SistemaGestionTaller
             string SQL_p;
             MySqlDataReader Reader;
 
-            SQL_p = "SELECT * FROM globalegreso WHERE idglobalingreso = '" + IdEgreso + "'";
+            SQL_p = "SELECT * FROM globalegresos WHERE idglobalegresos = '" + IdEgreso + "'";
 
             Reader = Conector.consultar(SQL_p);
 
