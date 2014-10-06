@@ -13,6 +13,8 @@ namespace SistemaGestionTaller
     {
         private string dni;
         private double dueda;
+        private int dataGridLimit;
+        private int limit;
         
         private ArrayList colVehiculos;
 
@@ -43,6 +45,18 @@ namespace SistemaGestionTaller
             set { colVehiculos = value; }
         }
 
+        public int DataGridLimit
+        {
+            get { return dataGridLimit; }
+            set { dataGridLimit = value; }
+        }
+
+        public int MySQLLimit
+        {
+            get { return limit; }
+            set { limit = value; }
+        }
+
         //LISTADO DE CLIENTES CON TODOS LOS DATOS PERSONALES
         public ArrayList coleccionDominio()
         {
@@ -50,11 +64,12 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
             ArrayList colClientes = new ArrayList();
 
-            SQL_p = "SELECT idcliente,razonsocial,cuit,direccion,telefono,codigopostal,ciudad,provincia,dni,email,observaciones " +
-                    "FROM cliente INNER JOIN vehiculo " +
-                    "ON cliente.idcliente = vehiculo.cliente_idcliente " +
+            SQL_p = "SELECT cliente.*, IFNULL(SUM(factura.saldo),0)AS saldo " +
+                    "FROM cliente JOIN vehiculo LEFT JOIN factura " +
+                    "ON cliente.idcliente = vehiculo.cliente_idcliente AND cliente.idcliente=factura.cliente_idcliente  " +
                     "WHERE vehiculo.dominio LIKE '%"+Filtro+"%' AND cliente.idcliente>0 " +
-                    "ORDER BY cliente.razonsocial";
+                    "ORDER BY cliente.razonsocial "+
+                    "LIMIT " + this.MySQLLimit + ",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -73,6 +88,7 @@ namespace SistemaGestionTaller
                 objClienteLocal.Dni = Reader.GetString("dni");
                 objClienteLocal.Email = Reader.GetString("email");
                 objClienteLocal.Observaciones = Reader.GetString("observaciones");
+                objClienteLocal.Deuda = Reader.GetDouble("saldo");
 
                 colClientes.Add(objClienteLocal);
 
@@ -89,10 +105,13 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
             ArrayList colClientes = new ArrayList();
 
-            SQL_p = "SELECT cliente.* " +
-                    "FROM cliente " +
-                    "WHERE cliente.razonsocial LIKE '%" + filtro + "%' AND cliente.idcliente>0 " +
-                    "ORDER BY cliente.razonsocial";
+            SQL_p = "SELECT cliente.*, IFNULL(SUM(factura.saldo),0)AS saldo " +
+                    "FROM cliente LEFT JOIN factura " +
+                    "ON cliente.idcliente=factura.cliente_idcliente " +
+                    "WHERE cliente.razonsocial LIKE '%" + filtro + "%' " +
+                    "GROUP BY cliente.idcliente " +
+                    "ORDER BY cliente.razonsocial " +
+                    "LIMIT " + this.MySQLLimit + ",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -111,6 +130,7 @@ namespace SistemaGestionTaller
                 objClienteLocal.Dni = Reader.GetString("dni");
                 objClienteLocal.Email = Reader.GetString("email");
                 objClienteLocal.Observaciones = Reader.GetString("observaciones");
+                objClienteLocal.Deuda = Reader.GetDouble("saldo");
 
                 colClientes.Add(objClienteLocal);
 
@@ -293,6 +313,23 @@ namespace SistemaGestionTaller
                 this.Deuda -= Reader.GetDouble("pagostotales");
             }
             Reader.Close();
+        }
+
+        public void queryDataGridLimit()
+        {
+            string SQL_p;
+            MySqlDataReader Reader;
+
+            SQL_p = "SELECT COUNT(*) as total_clientes FROM cliente";
+
+            Reader = Conector.consultar(SQL_p);
+
+            if (Reader.Read())
+            {
+                this.DataGridLimit = Reader.GetInt32("total_clientes");
+            }
+            Reader.Close();
+           
         }
     }
 }

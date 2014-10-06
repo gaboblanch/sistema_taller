@@ -208,7 +208,8 @@ namespace SistemaGestionTaller
                     "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "WHERE repuestostock.descripcion LIKE '%" + filtro + "%' AND tipo.gas='0' " +
                     "GROUP BY repuestostock.idrepuestostock " +
-                    "ORDER BY marca, modelo";
+                    "ORDER BY marca, modelo "+
+                    "LIMIT "+this.MySQLLimit+",30";
 
             Reader = Conector.consultar(SQL_p);
 

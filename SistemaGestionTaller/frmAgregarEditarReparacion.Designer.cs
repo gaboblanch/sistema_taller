@@ -67,6 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonEditarCliente = new System.Windows.Forms.Button();
             this.buttonNuevoCliente = new System.Windows.Forms.Button();
             this.textNombre = new System.Windows.Forms.TextBox();
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
@@ -126,7 +127,6 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.labelCodigoReparacion = new System.Windows.Forms.Label();
             this.buttonCopiar = new System.Windows.Forms.Button();
-            this.buttonEditarCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalle)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -426,6 +426,16 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente :: Nombre/ Razón Social";
+            // 
+            // buttonEditarCliente
+            // 
+            this.buttonEditarCliente.Location = new System.Drawing.Point(258, 51);
+            this.buttonEditarCliente.Name = "buttonEditarCliente";
+            this.buttonEditarCliente.Size = new System.Drawing.Size(58, 23);
+            this.buttonEditarCliente.TabIndex = 9;
+            this.buttonEditarCliente.Text = "Editar";
+            this.buttonEditarCliente.UseVisualStyleBackColor = true;
+            this.buttonEditarCliente.Click += new System.EventHandler(this.buttonEditarCliente_Click);
             // 
             // buttonNuevoCliente
             // 
@@ -1028,9 +1038,9 @@
             // 
             // labelCodigoReparacion
             // 
-            this.labelCodigoReparacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCodigoReparacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCodigoReparacion.AutoSize = true;
             this.labelCodigoReparacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCodigoReparacion.Location = new System.Drawing.Point(60, 16);
@@ -1050,16 +1060,6 @@
             this.buttonCopiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonCopiar.UseVisualStyleBackColor = true;
             this.buttonCopiar.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // buttonEditarCliente
-            // 
-            this.buttonEditarCliente.Location = new System.Drawing.Point(258, 51);
-            this.buttonEditarCliente.Name = "buttonEditarCliente";
-            this.buttonEditarCliente.Size = new System.Drawing.Size(58, 23);
-            this.buttonEditarCliente.TabIndex = 9;
-            this.buttonEditarCliente.Text = "Editar";
-            this.buttonEditarCliente.UseVisualStyleBackColor = true;
-            this.buttonEditarCliente.Click += new System.EventHandler(this.buttonEditarCliente_Click);
             // 
             // frmAgregarEditarReparacion
             // 

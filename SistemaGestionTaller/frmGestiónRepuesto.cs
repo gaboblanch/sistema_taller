@@ -13,19 +13,27 @@ namespace SistemaGestionTaller
     public partial class frmGestiónRepuesto : Form
     {
         private Repuesto repuesto;
+        private static ArrayList colRepuesto;
+
+        private DateTime lastLoading;
+        private int firstVisibleRow;
+        private bool flagDataGrid = false;
 
         public frmGestiónRepuesto()
         {
             InitializeComponent();
+
+            //attach scroll event.
+            //dataGridRepuesto.Scroll += new ScrollEventHandler(dataGridRepuesto_Scroll);
         }
-
-        /*private void buttonAgregar_Click(object sender, EventArgs e)
+        //CODIGO DE PRUEBA
+        private int GetDisplayedRowsCount()
         {
-            frmAgregarEditarRepuestoUnico faer = new frmAgregarEditarRepuestoUnico();
-            faer.MdiParent = this.MdiParent;
-            faer.Show();
-        }*/
-
+            int count = dataGridRepuesto.Rows[dataGridRepuesto.FirstDisplayedScrollingRowIndex].Height;
+            count = dataGridRepuesto.Height / count;
+            return count;
+        }
+        //TERMINA CODIGO DE PRUEBA
         private void buttonEditar_Click(object sender, EventArgs e)
         {
             int r = dataGridRepuesto.CurrentCell.RowIndex;
@@ -39,6 +47,8 @@ namespace SistemaGestionTaller
         private void frmGestiónRepuesto_Load(object sender, EventArgs e)
         {
             repuesto = new Repuesto();
+            repuesto.queryDataGridLimit(true);
+            colRepuesto = new ArrayList();
             //this.comboBoxBuscar.SelectedIndex = 1;
             llenarDataGrid();
         }
@@ -48,42 +58,50 @@ namespace SistemaGestionTaller
             this.buttonEditar.Enabled = false;
             this.buttonEliminar.Enabled = false;
 
-            ArrayList colRepuesto = new ArrayList();
-            
-
-            /*if (this.comboBoxBuscar.SelectedIndex == 0)
-            {
-                //BUSCAR POR CODIGO
-                colRepuesto = repuesto.coleccionCodigo();
-            }
-            else if (this.comboBoxBuscar.SelectedIndex == 1)
-            {
-                //BUSCAR POR DESCRIPCION
-                colRepuesto = repuesto.coleccion();
-            }
-            else if (this.comboBoxBuscar.SelectedIndex == 2)
-            {
-                //BUSCAR POR DESCRIPCION
-                colRepuesto = repuesto.coleccionMarcaModelo();
-            }*/
-
             if (this.textBoxCodigo.Text != "")
             {
                 //BUSCAR POR CODIGO
+                repuesto.MySQLLimit = 0;
                 repuesto.Filtro = this.textBoxCodigo.Text;
                 colRepuesto = repuesto.coleccionCodigo();
+                this.dataGridRepuesto.Rows.Clear();
+                
             }
             else if (this.textBoxMarca.Text != "")
             {
                 //BUSCAR POR DESCRIPCION
+                repuesto.MySQLLimit = 0;
                 repuesto.Filtro = this.textBoxMarca.Text;
                 colRepuesto = repuesto.coleccionMarcaModelo();
+                this.dataGridRepuesto.Rows.Clear();
+                flagDataGrid = true;
             }
-            else if (this.textFiltro.Text != "" || true)
+            else if (this.textFiltro.Text != "")
             {
                 //BUSCAR POR DESCRIPCION
+                repuesto.MySQLLimit = 0;
                 repuesto.Filtro = this.textFiltro.Text;
                 colRepuesto = repuesto.coleccion();
+                this.dataGridRepuesto.Rows.Clear();
+            }
+            else if (this.textBoxProveedor.Text != "")
+            {
+                //BUSCAR POR DESCRIPCION
+                repuesto.MySQLLimit = 0;
+                repuesto.Filtro = this.textBoxProveedor.Text;
+                colRepuesto = repuesto.coleccionProveedor();
+                this.dataGridRepuesto.Rows.Clear();
+            }
+            else
+            {
+                if (flagDataGrid)
+                {
+                    repuesto.Filtro = "";
+                    this.dataGridRepuesto.Rows.Clear();
+                    colRepuesto.Clear();
+                    flagDataGrid = false;
+                }
+                colRepuesto.AddRange(repuesto.coleccion());
             }
 
             if (this.checkBoxFaltantes.Checked)
@@ -99,48 +117,46 @@ namespace SistemaGestionTaller
                         //i = 0;
                     }
                 }
+                this.dataGridRepuesto.Rows.Clear();
             }
 
-            this.dataGridRepuesto.Rows.Clear();
 
             for (int i = 0; i < colRepuesto.Count; i++)
             {
-                if(((Repuesto)colRepuesto[i]).CantidadStock <= ((Repuesto)colRepuesto[i]).MinimoStock)
+                if (i == 0)
                 {
-                    this.dataGridRepuesto.Rows.Add();
+                    i = this.dataGridRepuesto.Rows.Count;
+                }
+
+                this.dataGridRepuesto.Rows.Add();
+
+                if (i == colRepuesto.Count)
+                {
+                    return;
+                }
+
+                if (((Repuesto)colRepuesto[i]).CantidadStock <= ((Repuesto)colRepuesto[i]).MinimoStock)
+                {
                     this.dataGridRepuesto.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    this.dataGridRepuesto.Rows[i].Cells["idRepuesto"].Value = ((Repuesto)colRepuesto[i]).IdRepuesto;
-                    this.dataGridRepuesto.Rows[i].Cells["idtipo"].Value = ((Repuesto)colRepuesto[i]).Idtipo;
-                    this.dataGridRepuesto.Rows[i].Cells["codigorepuesto"].Value = ((Repuesto)colRepuesto[i]).CodigoRepuesto;
-                    this.dataGridRepuesto.Rows[i].Cells["descripciontipo"].Value = ((Repuesto)colRepuesto[i]).DescripcionTipo;
-                    this.dataGridRepuesto.Rows[i].Cells["descripcionrespuesto"].Value = ((Repuesto)colRepuesto[i]).DescripcionRepuesto;
-                    this.dataGridRepuesto.Rows[i].Cells["marca"].Value = ((Repuesto)colRepuesto[i]).Marca;
-                    this.dataGridRepuesto.Rows[i].Cells["modelo"].Value = ((Repuesto)colRepuesto[i]).Modelo;
-                    this.dataGridRepuesto.Rows[i].Cells["cantidad"].Value = ((Repuesto)colRepuesto[i]).CantidadStock;
-                    this.dataGridRepuesto.Rows[i].Cells["costo"].Value = ((Repuesto)colRepuesto[i]).Costo;
-                    this.dataGridRepuesto.Rows[i].Cells["precio"].Value = ((Repuesto)colRepuesto[i]).PrecioUnitario;
-                    this.dataGridRepuesto.Rows[i].Cells["minimo"].Value = ((Repuesto)colRepuesto[i]).MinimoStock;
-                    this.dataGridRepuesto.Rows[i].Cells["idproveedor"].Value = ((Repuesto)colRepuesto[i]).Proveedor.Id;
-                    this.dataGridRepuesto.Rows[i].Cells["razonsocialproveedor"].Value = ((Repuesto)colRepuesto[i]).Proveedor.NombreRazonSocial;
                 }
                 else
                 {
-                    this.dataGridRepuesto.Rows.Add();
                     this.dataGridRepuesto.Rows[i].DefaultCellStyle.BackColor = Color.White;
-                    this.dataGridRepuesto.Rows[i].Cells["idRepuesto"].Value = ((Repuesto)colRepuesto[i]).IdRepuesto;
-                    this.dataGridRepuesto.Rows[i].Cells["idtipo"].Value = ((Repuesto)colRepuesto[i]).Idtipo;
-                    this.dataGridRepuesto.Rows[i].Cells["codigorepuesto"].Value = ((Repuesto)colRepuesto[i]).CodigoRepuesto;
-                    this.dataGridRepuesto.Rows[i].Cells["descripciontipo"].Value = ((Repuesto)colRepuesto[i]).DescripcionTipo;
-                    this.dataGridRepuesto.Rows[i].Cells["descripcionrespuesto"].Value = ((Repuesto)colRepuesto[i]).DescripcionRepuesto;
-                    this.dataGridRepuesto.Rows[i].Cells["marca"].Value = ((Repuesto)colRepuesto[i]).Marca;
-                    this.dataGridRepuesto.Rows[i].Cells["modelo"].Value = ((Repuesto)colRepuesto[i]).Modelo;
-                    this.dataGridRepuesto.Rows[i].Cells["cantidad"].Value = ((Repuesto)colRepuesto[i]).CantidadStock;
-                    this.dataGridRepuesto.Rows[i].Cells["costo"].Value = ((Repuesto)colRepuesto[i]).Costo;
-                    this.dataGridRepuesto.Rows[i].Cells["precio"].Value = ((Repuesto)colRepuesto[i]).PrecioUnitario;
-                    this.dataGridRepuesto.Rows[i].Cells["minimo"].Value = ((Repuesto)colRepuesto[i]).MinimoStock;
-                    this.dataGridRepuesto.Rows[i].Cells["idproveedor"].Value = ((Repuesto)colRepuesto[i]).Proveedor.Id;
-                    this.dataGridRepuesto.Rows[i].Cells["razonsocialproveedor"].Value = ((Repuesto)colRepuesto[i]).Proveedor.NombreRazonSocial;
                 }
+
+                this.dataGridRepuesto.Rows[i].Cells["idRepuesto"].Value = ((Repuesto)colRepuesto[i]).IdRepuesto;
+                this.dataGridRepuesto.Rows[i].Cells["idtipo"].Value = ((Repuesto)colRepuesto[i]).Idtipo;
+                this.dataGridRepuesto.Rows[i].Cells["codigorepuesto"].Value = ((Repuesto)colRepuesto[i]).CodigoRepuesto;
+                this.dataGridRepuesto.Rows[i].Cells["descripciontipo"].Value = ((Repuesto)colRepuesto[i]).DescripcionTipo;
+                this.dataGridRepuesto.Rows[i].Cells["descripcionrespuesto"].Value = ((Repuesto)colRepuesto[i]).DescripcionRepuesto;
+                this.dataGridRepuesto.Rows[i].Cells["marca"].Value = ((Repuesto)colRepuesto[i]).Marca;
+                this.dataGridRepuesto.Rows[i].Cells["modelo"].Value = ((Repuesto)colRepuesto[i]).Modelo;
+                this.dataGridRepuesto.Rows[i].Cells["cantidad"].Value = ((Repuesto)colRepuesto[i]).CantidadStock;
+                this.dataGridRepuesto.Rows[i].Cells["costo"].Value = ((Repuesto)colRepuesto[i]).Costo;
+                this.dataGridRepuesto.Rows[i].Cells["precio"].Value = ((Repuesto)colRepuesto[i]).PrecioUnitario;
+                this.dataGridRepuesto.Rows[i].Cells["minimo"].Value = ((Repuesto)colRepuesto[i]).MinimoStock;
+                this.dataGridRepuesto.Rows[i].Cells["idproveedor"].Value = " "; //((Repuesto)colRepuesto[i]).Proveedor.Id;
+                this.dataGridRepuesto.Rows[i].Cells["razonsocialproveedor"].Value = " "; // ((Repuesto)colRepuesto[i]).Proveedor.NombreRazonSocial;
             }
             this.dataGridRepuesto.ClearSelection();
         }
@@ -187,6 +203,10 @@ namespace SistemaGestionTaller
 
         private void buttonActualizar_Click(object sender, EventArgs e)
         {
+
+            repuesto.Filtro = "";
+            this.dataGridRepuesto.Rows.Clear();
+            colRepuesto.Clear();
             this.llenarDataGrid();
         }
 
@@ -197,6 +217,12 @@ namespace SistemaGestionTaller
 
         private void checkBoxFaltantes_CheckedChanged(object sender, EventArgs e)
         {
+            if (!this.checkBoxFaltantes.Checked)
+            {
+                this.flagDataGrid = true;
+            }
+
+            colRepuesto.Clear();
             this.llenarDataGrid();
         }
 
@@ -206,6 +232,34 @@ namespace SistemaGestionTaller
         }
 
         private void textBoxMarca_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
+        }
+
+        private void dataGridRepuesto_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.Type == ScrollEventType.SmallIncrement || e.Type == ScrollEventType.LargeIncrement)
+            {
+                if (e.NewValue >= dataGridRepuesto.Rows.Count - GetDisplayedRowsCount() && repuesto.DataGridLimit > dataGridRepuesto.Rows.Count)
+                {
+                    //prevent loading from autoscroll.
+                    TimeSpan ts = DateTime.Now - lastLoading;
+                    if (ts.TotalMilliseconds > 100)
+                    {
+                        firstVisibleRow = e.NewValue;
+                        repuesto.MySQLLimit += 30; 
+                        llenarDataGrid();
+                        dataGridRepuesto.FirstDisplayedScrollingRowIndex = e.OldValue;
+                    }
+                    else
+                    {
+                        dataGridRepuesto.FirstDisplayedScrollingRowIndex = e.OldValue;
+                    }
+                }
+            }
+        }
+
+        private void textBoxProveedor_TextChanged(object sender, EventArgs e)
         {
             this.llenarDataGrid();
         }

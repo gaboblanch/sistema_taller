@@ -33,7 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxBuscar = new System.Windows.Forms.ComboBox();
             this.dataGridRepuesto = new System.Windows.Forms.DataGridView();
-            this.textFiltro = new System.Windows.Forms.TextBox();
             this.idRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idtipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripciontipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +44,8 @@
             this.costo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textFiltro = new System.Windows.Forms.TextBox();
+            this.buttonEditarRepuesto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuesto)).BeginInit();
             this.SuspendLayout();
@@ -76,9 +77,9 @@
             // 
             this.dataGridRepuesto.AllowUserToAddRows = false;
             this.dataGridRepuesto.AllowUserToDeleteRows = false;
-            this.dataGridRepuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridRepuesto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridRepuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridRepuesto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idRepuesto,
@@ -100,15 +101,9 @@
             this.dataGridRepuesto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridRepuesto.Size = new System.Drawing.Size(756, 358);
             this.dataGridRepuesto.TabIndex = 33;
+            this.dataGridRepuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellClick);
             this.dataGridRepuesto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellDoubleClick);
-            // 
-            // textFiltro
-            // 
-            this.textFiltro.Location = new System.Drawing.Point(634, 17);
-            this.textFiltro.Name = "textFiltro";
-            this.textFiltro.Size = new System.Drawing.Size(128, 20);
-            this.textFiltro.TabIndex = 1;
-            this.textFiltro.TextChanged += new System.EventHandler(this.textFiltro_TextChanged);
+            this.dataGridRepuesto.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridRepuesto_Scroll);
             // 
             // idRepuesto
             // 
@@ -201,11 +196,31 @@
             this.minimo.ReadOnly = true;
             this.minimo.Visible = false;
             // 
+            // textFiltro
+            // 
+            this.textFiltro.Location = new System.Drawing.Point(634, 17);
+            this.textFiltro.Name = "textFiltro";
+            this.textFiltro.Size = new System.Drawing.Size(128, 20);
+            this.textFiltro.TabIndex = 1;
+            this.textFiltro.TextChanged += new System.EventHandler(this.textFiltro_TextChanged);
+            // 
+            // buttonEditarRepuesto
+            // 
+            this.buttonEditarRepuesto.Enabled = false;
+            this.buttonEditarRepuesto.Image = global::SistemaGestionTaller.Properties.Resources.editar;
+            this.buttonEditarRepuesto.Location = new System.Drawing.Point(728, 416);
+            this.buttonEditarRepuesto.Name = "buttonEditarRepuesto";
+            this.buttonEditarRepuesto.Size = new System.Drawing.Size(52, 45);
+            this.buttonEditarRepuesto.TabIndex = 44;
+            this.buttonEditarRepuesto.UseVisualStyleBackColor = true;
+            this.buttonEditarRepuesto.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmBuscarRepuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 425);
+            this.ClientSize = new System.Drawing.Size(788, 465);
+            this.Controls.Add(this.buttonEditarRepuesto);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -237,5 +252,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn costo;
         private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn minimo;
+        private System.Windows.Forms.Button buttonEditarRepuesto;
     }
 }

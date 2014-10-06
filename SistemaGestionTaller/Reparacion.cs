@@ -181,11 +181,11 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
             ArrayList colReparacion = new ArrayList();
 
-            SQL_p = "SELECT reparacion.*, vehiculo.dominio, vehiculo.marca, vehiculo.modelo, cliente.razonsocial " +
-                    "FROM reparacion INNER JOIN cliente INNER JOIN vehiculo " +
-                    "ON reparacion.vehiculo_idvehiculo = vehiculo.idvehiculo AND reparacion.cliente_idcliente = cliente.idcliente " +
-                    "WHERE reparacion.estado = '1' OR reparacion.estado = '2' OR reparacion.estado = '4' " +
-                    "GROUP BY reparacion.idreparacion HAVING cliente.razonsocial LIKE '%" + Cliente.Filtro + "%'" +
+            SQL_p = "SELECT reparacion.*, vehiculo.dominio, vehiculo.marca, vehiculo.modelo, cliente.razonsocial, IFNULL(factura.saldo, reparacion.importe) AS saldo " +
+                    "FROM reparacion INNER JOIN cliente INNER JOIN vehiculo INNER JOIN factura " +
+                    "ON reparacion.vehiculo_idvehiculo = vehiculo.idvehiculo AND reparacion.cliente_idcliente = cliente.idcliente AND reparacion.idreparacion = factura.reparacion_idreparacion " +
+                    "WHERE factura.saldo != 0 AND (reparacion.estado = '1' OR reparacion.estado = '2' OR reparacion.estado = '4') " +
+                    "GROUP BY reparacion.idreparacion HAVING cliente.razonsocial LIKE '%" + Cliente.Filtro + "%' " +
                     "ORDER BY reparacion.fecha DESC";
 
             Reader = Conector.consultar(SQL_p);
@@ -213,7 +213,7 @@ namespace SistemaGestionTaller
                 //DATOS CLIENTE
                 objReparacioLocal.Cliente.Id = Reader.GetInt32("cliente_idcliente");
                 objReparacioLocal.Cliente.NombreRazonSocial = Reader.GetString("razonsocial");
-                //objReparacioLocal.Cliente.Deuda = Reader.GetDouble("saldo");
+                objReparacioLocal.Cliente.Deuda = Reader.GetDouble("saldo");
 
                 colReparacion.Add(objReparacioLocal);
             }

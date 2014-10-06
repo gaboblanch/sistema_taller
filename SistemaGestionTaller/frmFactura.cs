@@ -86,7 +86,15 @@ namespace SistemaGestionTaller
                     this.facturaDataGridView.Rows[i].Cells["descripcion"].Value = ((RepuestoReparacion)colDetalleFactura[i]).ToString();
                     this.facturaDataGridView.Rows[i].Cells["cantidad"].Value = ((RepuestoReparacion)colDetalleFactura[i]).CantidadRequerida;
                     this.facturaDataGridView.Rows[i].Cells["preciounitario"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioUnitario;
-                    this.facturaDataGridView.Rows[i].Cells["importe"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioTotal;
+                    if (this.comboBoxTipoFactura.Text != "B")
+                    {
+                        this.facturaDataGridView.Rows[i].Cells["importe"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioTotal;
+                    }
+                    else
+                    {
+                        double porcentajeivaLocal = ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva;
+                        this.facturaDataGridView.Rows[i].Cells["importe"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioTotal * (1+(porcentajeivaLocal / 100));
+                    }
                 }
 
                 //CARGAS
@@ -96,7 +104,15 @@ namespace SistemaGestionTaller
                     this.facturaDataGridView.Rows[i].Cells["descripcion"].Value = ((RepuestoReparacion)colDetalleFactura[i]).ToString();
                     this.facturaDataGridView.Rows[i].Cells["cantidad"].Value = ((RepuestoReparacion)colDetalleFactura[i]).CantidadRequerida;
                     this.facturaDataGridView.Rows[i].Cells["preciounitario"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioUnitario;
-                    this.facturaDataGridView.Rows[i].Cells["importe"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioTotal;
+                    if (this.comboBoxTipoFactura.Text != "B" || factura.TipoFactura != "B")
+                    {
+                        this.facturaDataGridView.Rows[i].Cells["importe"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioTotal;
+                    }
+                    else
+                    {
+                        double porcentajeivaLocal = ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva;
+                        this.facturaDataGridView.Rows[i].Cells["importe"].Value = ((RepuestoReparacion)colDetalleFactura[i]).PrecioTotal * (1 + (porcentajeivaLocal / 100)); ;
+                    }
                 }
 
                 //TAREAS
@@ -135,46 +151,26 @@ namespace SistemaGestionTaller
             {
                 if (((Iva)this.comboBoxIva.SelectedItem).CondicionIva.IndexOf("INCLUIDO") > 0 || factura.IvaFactura.CondicionIva.IndexOf("INCLUIDO") > 0)
                 {
-                    /*this.textBoxIva.Text = "";
-                    this.textBoxIva.Enabled = false;
-                    this.textBoxSubtotal.Text = "";
-                    this.textBoxSubtotal.Enabled = false;*/
-
-                    //this.comboBoxIva.Enabled = false;
-                    //this.comboBoxTipoFactura.Enabled = false;
-
                     //CALCULO VIEJO DEL IVA
                     factura.ImporteFactura = factura.VentaRepuesto.ImporteTotal;
-
                     double ImporteIva = Convert.ToDouble((factura.VentaRepuesto.ImporteTotal * ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva / (((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva+100)).ToString("0.00"));
-
                     double Subtotal = Convert.ToDouble((factura.VentaRepuesto.ImporteTotal - ImporteIva).ToString("0.00"));
-
                     factura.ImporteFactura -= factura.ImporteFactura * (factura.Bonificacion / 100);
-
                     this.facturaTextBoxTotal.Text = factura.ImporteFactura.ToString("0.00").Insert(0, "$");
                     this.textBoxIva.Text = ImporteIva.ToString("0.00").Insert(0, "$");
                     this.textBoxSubtotal.Text = Subtotal.ToString("0.00").Insert(0, "$");
-
                     //Calculamos el saldo de la factura
                     this.textBoxSaldo.Text = "$" + (factura.ImporteFactura - importeFinal).ToString("0.00");
                 }
                 else
                 {
                     //this.comboBoxIva.Enabled = true;
-
                     double porcentajeivaLocal = ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva;
-
                     this.textBoxIva.Text = (factura.VentaRepuesto.ImporteTotal * (porcentajeivaLocal / 100)).ToString("0.00").Insert(0, "$");
-
                     this.textBoxSubtotal.Text = (factura.VentaRepuesto.ImporteTotal).ToString("0.00").Insert(0, "$");
-
                     factura.ImporteFactura = factura.VentaRepuesto.ImporteTotal * (1 + (porcentajeivaLocal / 100));
-
                     factura.ImporteFactura -= factura.ImporteFactura * (factura.Bonificacion / 100);
-
                     this.facturaTextBoxTotal.Text = factura.ImporteFactura.ToString("0.00").Insert(0, "$");
-
                     //Calculo del saldo
                     this.textBoxSaldo.Text = "$" + (factura.ImporteFactura - importeFinal);
                 }
@@ -183,45 +179,42 @@ namespace SistemaGestionTaller
             {
                 if (((Iva)this.comboBoxIva.SelectedItem).CondicionIva.IndexOf("INCLUIDO") > 0 || factura.IvaFactura.CondicionIva.IndexOf("INCLUIDO") > 0)
                 {
-                    /*this.textBoxIva.Text = "";
-                    this.textBoxIva.Enabled = false;
-                    this.textBoxSubtotal.Text = "";
-                    this.textBoxSubtotal.Enabled = false;*/
-
-                    //this.comboBoxIva.Enabled = false;
-                    //this.comboBoxTipoFactura.Enabled = false;
-
                     //CALCULO IVA INCLUIDO
                     factura.ImporteFactura = factura.Reparacion.ImporteTotal;
-
                     double ImporteIva = Convert.ToDouble((factura.Reparacion.ImporteTotal * ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva / (((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva + 100)).ToString("0.00"));
-
                     double Subtotal = Convert.ToDouble((factura.Reparacion.ImporteTotal - ImporteIva).ToString("0.00"));
-
                     factura.ImporteFactura -= factura.ImporteFactura * (factura.Bonificacion / 100);
-
+                    if (this.comboBoxTipoFactura.Text != "B")
+                    {
+                        this.textBoxIva.Text = ImporteIva.ToString("0.00").Insert(0, "$");
+                        this.textBoxSubtotal.Text = Subtotal.ToString("0.00").Insert(0, "$");
+                    }
+                    else
+                    {
+                        this.textBoxIva.Text = "";
+                        this.textBoxSubtotal.Text = "";
+                    }
                     this.facturaTextBoxTotal.Text = factura.ImporteFactura.ToString("0.00").Insert(0, "$");
-                    this.textBoxIva.Text = ImporteIva.ToString("0.00").Insert(0,"$");
-                    this.textBoxSubtotal.Text = Subtotal.ToString("0.00").Insert(0, "$");
                     //Calculamos el saldo de la factura
                     this.textBoxSaldo.Text = "$" + (factura.ImporteFactura - importeFinal).ToString("0.00");
                 }
                 else
                 {
-                   
                     //CALCULO VIEJO DEL IVA
                     double porcentajeivaLocal = ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva;
-                    
-                    this.textBoxIva.Text = (factura.Reparacion.ImporteTotal * (porcentajeivaLocal / 100)).ToString("0.00").Insert(0, "$");
-
-                    this.textBoxSubtotal.Text = (factura.Reparacion.ImporteTotal).ToString("0.00").Insert(0, "$");
-
                     factura.ImporteFactura = factura.Reparacion.ImporteTotal * (1 + (porcentajeivaLocal / 100));
-
                     factura.ImporteFactura -= factura.ImporteFactura * (factura.Bonificacion / 100);
-
+                    if (this.comboBoxTipoFactura.Text != "B")
+                    {
+                        this.textBoxIva.Text = (factura.Reparacion.ImporteTotal * (porcentajeivaLocal / 100)).ToString("0.00").Insert(0, "$");
+                        this.textBoxSubtotal.Text = (factura.Reparacion.ImporteTotal).ToString("0.00").Insert(0, "$");
+                    }
+                    else
+                    {
+                        this.textBoxIva.Text = "";
+                        this.textBoxSubtotal.Text = "";
+                    }
                     this.facturaTextBoxTotal.Text = factura.ImporteFactura.ToString("0.00").Insert(0, "$");
-
                     //Calculamos el saldo de la factura
                     this.textBoxSaldo.Text = "$" + (factura.ImporteFactura - importeFinal).ToString("0.00");
                 }
@@ -291,7 +284,6 @@ namespace SistemaGestionTaller
 
         private void frmFactura_Load(object sender, EventArgs e)
         {
-            this.comboBoxTipoFactura.SelectedIndex = 0;
             this.comboBoxMedioPago.SelectedIndex = 0;
             this.llenarComboIva();
 
@@ -337,18 +329,6 @@ namespace SistemaGestionTaller
 
                     this.flagImpreza = true;
 
-                    /*if (factura.IvaFactura.CondicionIva.IndexOf("Incluido") > 0)
-                    {
-                        
-                        //this.comboBoxTipoFactura.Items.Add(factura.TipoFactura);
-                        //this.comboBoxTipoFactura.SelectedIndex = this.comboBoxTipoFactura.Items.IndexOf("C");
-
-                        factura.IvaFactura.CondicionIva = factura.IvaFactura.CondicionIva.Substring(0, factura.IvaFactura.CondicionIva.IndexOf("("));
-                        factura.IvaFactura.PorcentajeIva = 21;
-                        this.comboBoxIva.Items.Add(factura.IvaFactura);
-                        this.comboBoxIva.SelectedIndex = this.comboBoxIva.Items.Count - 1;
-                    }*/
-
                     this.textBoxCodigoFactura.Text = factura.NumeroFactura;
                     this.llenarPagos();
 
@@ -360,9 +340,6 @@ namespace SistemaGestionTaller
                 }
                 else
                 {
-                    //this.facturaTextBoxTotal.Text = "$" + factura.VentaRepuesto.ImporteTotal;
-                    //this.textBoxSaldo.Text = "$" + factura.VentaRepuesto.ImporteTotal;
-                    
                     //En caso de facturar a nombre de otro cliente esta linea no va.
                     factura.Cliente = factura.VentaRepuesto.Cliente;
                     factura.IvaFactura = (Iva)this.comboBoxIva.SelectedItem;
@@ -410,17 +387,6 @@ namespace SistemaGestionTaller
                     this.flagImpreza = true;
 
                     this.textBoxCodigoFactura.Text = factura.NumeroFactura;
-
-                    /*if (factura.IvaFactura.CondicionIva.IndexOf("Incluido") > 0)
-                    {
-                        //this.comboBoxTipoFactura.Items.Add(factura.TipoFactura);
-                        //this.comboBoxTipoFactura.SelectedIndex = this.comboBoxTipoFactura.Items.IndexOf("C");
-
-                        factura.IvaFactura.CondicionIva = factura.IvaFactura.CondicionIva.Substring(0, factura.IvaFactura.CondicionIva.IndexOf("("));
-                        factura.IvaFactura.PorcentajeIva = 21;
-                        this.comboBoxIva.Items.Add(factura.IvaFactura);
-                        this.comboBoxIva.SelectedIndex = this.comboBoxIva.Items.Count - 1;
-                    }*/
                     this.llenarPagos();
 
                     //CAMBIAMOS EL NOMBRE DEL BOTON GUARDAR PARA GUIAR AL USUARIO
@@ -431,8 +397,6 @@ namespace SistemaGestionTaller
                 }
                 else
                 {
-                    //this.facturaTextBoxTotal.Text = "$" + factura.Reparacion.ImporteTotal;
-                    //this.textBoxSaldo.Text = "$" + factura.Reparacion.ImporteTotal;
                     if (this.textBoxBonificacion.Text == "")
                         factura.Bonificacion = 0;
 
@@ -447,6 +411,15 @@ namespace SistemaGestionTaller
 
                 }
                 this.flagControl = true;
+                
+                if (factura.TipoFactura != null)
+                {
+                    this.comboBoxTipoFactura.Text = factura.TipoFactura;
+                }
+                else
+                {
+                    this.comboBoxTipoFactura.SelectedIndex = 0;
+                }
                 this.llenarDetalleFactura();
             }
         }
@@ -476,12 +449,6 @@ namespace SistemaGestionTaller
 
                 this.Close();
                 return;
-
-                //CAMBIAMOS EL NOMBRE DEL BOTON GUARDAR PARA GUIAR AL USUARIO
-                /*this.buttonGuardar.Text = "Guardar";
-                this.buttonGuardar.TextAlign = ContentAlignment.MiddleRight;
-                this.buttonGuardar.Image = global::SistemaGestionTaller.Properties.Resources.guardar_documento_icono_7840_48;
-                this.buttonGuardar.ImageAlign = ContentAlignment.MiddleLeft;*/
             }
 
             if (flagVenta)
@@ -490,6 +457,7 @@ namespace SistemaGestionTaller
                 if (factura.getFacturaVenta())
                 {
                     //LA FACTURA YA EXISTE Y VAMOS A CARGAR NUEVOS PAGOS
+       
                     factura.Saldo = Convert.ToDouble(this.textBoxSaldo.Text.Replace("$", ""));
                     factura.EstadoFactura = 0;
                     factura.actualizarVenta();
@@ -1070,26 +1038,47 @@ namespace SistemaGestionTaller
             }
             else
             {
-                //IVA 21%
-                dsFactura.Factura.Rows.Add(
-                this.dateTimePickerFactura.Value.ToShortDateString(),//fechafactura
-                factura.NumeroFactura,//numerofactura
-                factura.ImporteFactura.ToString("0.00").Insert(0, "$ "),//importefactura
-                factura.TipoFactura,//tipofactura
-                factura.Cliente.NombreRazonSocial,//nombrerazonsocial
-                factura.Cliente.Cuit,//cuit
-                factura.Cliente.Direccion,//direccion
-                factura.IvaFactura.CondicionIva,//condicioniva
-                (factura.Bonificacion+factura.Reparacion.ImporteTotal).ToString("0.00").Insert(0,"$"),//importe sin iva
-                "",//iva 10.5%
-                factura.Bonificacion.ToString("0.00").Insert(0, "$ "), //bonificacion en pesos
-                this.textBoxSubtotal.Text,//subtotal sin iva y bonificado
-                this.textBoxIva.Text,//iva 21%
-                factura.Reparacion.CodigoReparacion//codigo OT
-                );
+                if (this.comboBoxTipoFactura.Text != "B")
+                {
+                    //IVA 21%
+                    dsFactura.Factura.Rows.Add(
+                    this.dateTimePickerFactura.Value.ToShortDateString(),//fechafactura
+                    factura.NumeroFactura,//numerofactura
+                    factura.ImporteFactura.ToString("0.00").Insert(0, "$ "),//importefactura
+                    factura.TipoFactura,//tipofactura
+                    factura.Cliente.NombreRazonSocial,//nombrerazonsocial
+                    factura.Cliente.Cuit,//cuit
+                    factura.Cliente.Direccion,//direccion
+                    factura.IvaFactura.CondicionIva,//condicioniva
+                    (factura.Bonificacion + factura.Reparacion.ImporteTotal).ToString("0.00").Insert(0, "$"),//importe sin iva
+                    "",//iva 10.5%
+                    factura.Bonificacion.ToString("0.00").Insert(0, "$ "), //bonificacion en pesos
+                    this.textBoxSubtotal.Text,//subtotal sin iva y bonificado
+                    this.textBoxIva.Text,//iva 21%
+                    factura.Reparacion.CodigoReparacion//codigo OT
+                    );
+                }
+                else
+                {
+                    //IVA 21%
+                    dsFactura.Factura.Rows.Add(
+                    this.dateTimePickerFactura.Value.ToShortDateString(),//fechafactura
+                    factura.NumeroFactura,//numerofactura
+                    factura.ImporteFactura.ToString("0.00").Insert(0, "$ "),//importefactura
+                    factura.TipoFactura,//tipofactura
+                    factura.Cliente.NombreRazonSocial,//nombrerazonsocial
+                    factura.Cliente.Cuit,//cuit
+                    factura.Cliente.Direccion,//direccion
+                    factura.IvaFactura.CondicionIva,//condicioniva
+                    factura.ImporteFactura.ToString("0.00").Insert(0, "$ "),//importe sin iva
+                    "",//iva 10.5%
+                    factura.Bonificacion.ToString("0.00").Insert(0, "$ "), //bonificacion en pesos
+                    "",//subtotal sin iva y bonificado
+                    "",//iva 21%
+                    factura.Reparacion.CodigoReparacion//codigo OT
+                    );
+                }
             }
-
-            
 
             dsFactura.Vehiculo.Rows.Add(
                 factura.Reparacion.Vehiculo.Dominio,
@@ -1102,14 +1091,24 @@ namespace SistemaGestionTaller
             {
                 for (int i = 0; i < factura.Reparacion.DetalleRepuestos.Count; i++)
                 {
+                    double porcentajeivaLocal = ((Iva)this.comboBoxIva.SelectedItem).PorcentajeIva;
+                    double totalRepuesto = 0;
+                    if (this.comboBoxTipoFactura.Text != "B")
+                    {
+                        totalRepuesto = ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioTotal;
+                    }
+                    else
+                    {
+                        totalRepuesto = ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioTotal * (1 + (porcentajeivaLocal / 100));
+                    }
                     dsFactura.TablaRepuestos.Rows.Add(
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).CantidadRequerida.ToString(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).CodigoRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).DescripcionRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioUnitario.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioTotal.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioTotal.ToString("0.00")
-                        );
+                            ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).CantidadRequerida.ToString(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).CodigoRepuesto.ToString().ToUpper(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).DescripcionRepuesto.ToString().ToUpper(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleRepuestos[i]).PrecioUnitario.ToString("0.00"),
+                            totalRepuesto.ToString("0.00"),
+                            totalRepuesto.ToString("0.00")
+                            );
                 }
             }
 
@@ -1117,14 +1116,28 @@ namespace SistemaGestionTaller
             {
                 for (int i = 0; i < factura.Reparacion.DetalleCargas.Count; i++)
                 {
-                    dsFactura.TablaRepuestos.Rows.Add(
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CantidadRequerida.ToString(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CodigoRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).DescripcionRepuesto.ToString().ToUpper(),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioUnitario.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00"),
-                        ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00")
-                        );
+                    if (this.comboBoxTipoFactura.Text != "B")
+                    {
+                        dsFactura.TablaRepuestos.Rows.Add(
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CantidadRequerida.ToString(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CodigoRepuesto.ToString().ToUpper(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).DescripcionRepuesto.ToString().ToUpper(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioUnitario.ToString("0.00"),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00"),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00")
+                            );
+                    }
+                    else
+                    {
+                        dsFactura.TablaRepuestos.Rows.Add(
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CantidadRequerida.ToString(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).CodigoRepuesto.ToString().ToUpper(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).DescripcionRepuesto.ToString().ToUpper(),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioUnitario.ToString("0.00"),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00"),
+                            ((RepuestoReparacion)factura.Reparacion.DetalleCargas[i]).PrecioTotal.ToString("0.00")
+                            );
+                    }
                 }
             }
 
@@ -1163,7 +1176,7 @@ namespace SistemaGestionTaller
 
             try
             {
-                oRep.Load("E:\\DOCUMENTOS GABRIEL\\Mis documentos\\Visual Studio 2010\\Projects\\SistemaGestionTaller\\SistemaGestionTaller\\CrystalReport1.rpt");
+                oRep.Load("../../CrystalReport1.rpt");
             }
             catch
             {
@@ -1551,6 +1564,12 @@ namespace SistemaGestionTaller
             {
                 this.imprimirFactura();
             }
+        }
+
+        private void comboBoxTipoFactura_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.calcular();
+            this.llenarDetalleFactura();
         }
 
     }

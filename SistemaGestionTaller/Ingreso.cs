@@ -17,12 +17,18 @@ namespace SistemaGestionTaller
         private double importe;
         private DateTime fecha;
         private string filtro;
+        //INICIO CODIGO NUEVO
+        private ArrayList detalleFacturas;
+        //FIN CODIGO NUEVO
 
         public Ingreso()
         {
             detalleRepuestos = new ArrayList();
             detalleTareas = new ArrayList();
             detalleCargas = new ArrayList();
+            //INICIO CODIGO NUEVO
+            detalleFacturas = new ArrayList();
+            //FIN CODIGO NUEVO
             fecha = new DateTime();
         }
 
@@ -73,7 +79,13 @@ namespace SistemaGestionTaller
             get { return filtro; }
             set { filtro = value; }
         }
-
+        //INICIO CODIGO NUEVO
+        public ArrayList DetalleFacturas
+        {
+            get { return detalleFacturas; }
+            set { detalleFacturas = value; }
+        }
+        //FIN CODIGO NUEVO
         public void agregar()
         {
             string SQL_p;
@@ -165,16 +177,17 @@ namespace SistemaGestionTaller
 
             SQL_p = "SELECT reparacion.fecha, repuestostock.idrepuestostock, repuestostock.descripcion, repuestostock.marca, repuestostock.modelo, repuestoreparacion.idrepuestoreparacion, " +
                     "SUM(repuestoreparacion.cantidadreparacion) AS cantidadtotal, (repuestoreparacion.preciototal/repuestoreparacion.cantidadreparacion) AS preciounitario, tipo.* " +
-                    "FROM reparacion INNER JOIN repuestoreparacion INNER JOIN tipo INNER JOIN repuestostock " +
-                    "ON  repuestoreparacion.reparacion_idreparacion = reparacion.idreparacion " +
+                    "FROM factura INNER JOIN reparacion INNER JOIN repuestoreparacion INNER JOIN tipo INNER JOIN repuestostock " +
+                    "ON  factura.reparacion_idreparacion = reparacion.idreparacion AND "+
+                    "repuestoreparacion.reparacion_idreparacion = reparacion.idreparacion " +
                     "AND repuestoreparacion.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "AND repuestostock.tipo_idtipo = tipo.idtipo " +
-                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
+                    "WHERE factura.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
                     "GROUP BY repuestoreparacion.repuestostock_idrepuestostock " +
                     "ORDER BY tipo.descripciontipo";
 
             Reader = Conector.consultar(SQL_p);
-
+            
             while (Reader.Read())
             {
                 RepuestoReparacion objRepuesto = new RepuestoReparacion();
@@ -212,9 +225,10 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
 
             SQL_p = "SELECT reparacion.fecha, repuestogenerico.idrepuestogenerico, repuestogenerico.descripcion, SUM(repuestogenerico.cantidadreparacion) AS cantidadtotal, (repuestogenerico.preciototal/repuestogenerico.cantidadreparacion) AS preciounitario " +
-                    "FROM reparacion INNER JOIN repuestogenerico "+
-                    "ON  repuestogenerico.reparacion_idreparacion = reparacion.idreparacion " +
-                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
+                    "FROM factura INNER JOIN reparacion INNER JOIN repuestogenerico " +
+                    "ON  factura.reparacion_idreparacion = reparacion.idreparacion "+
+                    "AND repuestogenerico.reparacion_idreparacion = reparacion.idreparacion " +
+                    "WHERE factura.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
                     "GROUP BY repuestogenerico.idrepuestogenerico "+
                     "ORDER BY repuestogenerico.descripcion";
 
@@ -250,10 +264,11 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
 
             SQL_p = "SELECT reparacion.fecha, tarea.idtarea, tarea.descripciontarea, tareareparacion.idtareareparacion, SUM(tareareparacion.preciotarea) AS preciototal " +
-                    "FROM reparacion INNER JOIN tarea INNER JOIN tareareparacion "+
-                    "ON  tareareparacion.tarea_idtarea = tarea.idtarea "+
+                    "FROM factura INNER JOIN reparacion INNER JOIN tarea INNER JOIN tareareparacion " +
+                    "ON  factura.reparacion_idreparacion = reparacion.idreparacion "+
+                    "AND tareareparacion.tarea_idtarea = tarea.idtarea " +
                     "AND tareareparacion.reparacion_idreparacion = reparacion.idreparacion "+
-                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
+                    "WHERE factura.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
                     "GROUP BY tareareparacion.tarea_idtarea "+
                     "ORDER BY tarea.descripciontarea";
 
@@ -287,9 +302,10 @@ namespace SistemaGestionTaller
             MySqlDataReader Reader;
 
             SQL_p = "SELECT reparacion.fecha, tareagenerica.idtareagenerica, tareagenerica.descripciontarea, SUM(tareagenerica.preciotarea) AS preciototal "+
-                    "FROM reparacion INNER JOIN tareagenerica "+
-                    "ON  tareagenerica.idtareagenerica = reparacion.idreparacion " +
-                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
+                    "FROM factura INNER JOIN reparacion INNER JOIN tareagenerica " +
+                    "ON factura.reparacion_idreparacion = reparacion.idreparacion "+
+                    "AND tareagenerica.idtareagenerica = reparacion.idreparacion " +
+                    "WHERE factura.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' " +
                     "GROUP BY tareagenerica.idtareagenerica "+
                     "ORDER BY tareagenerica.descripciontarea";
 
@@ -321,9 +337,9 @@ namespace SistemaGestionTaller
                     "FROM ingreso " +
                     "WHERE ingreso.fechaingreso BETWEEN '"+fechaInicio+"' AND '"+fechaFin+"') " +
                     "+ " +
-                    "(SELECT IFNULL(SUM(reparacion.importe),0) " +
-                    "FROM reparacion " +
-                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "') "+
+                    "(SELECT IFNULL(SUM(pagosreparacion.importepago),0) " +
+                    "FROM pagosreparacion " +
+                    "WHERE pagosreparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "') " +
                     "AS totalingresos";
 
             Reader = Conector.consultar(SQL_p);
@@ -337,5 +353,45 @@ namespace SistemaGestionTaller
             Reader.Close();
         }
 
+        //INICIO CODIGO NUEVO
+        /// <summary>
+        /// Ingresos generados por tareas manuales
+        /// </summary>
+        /// <param name="fechaInicio"></param>
+        /// <param name="fechaFin"></param>
+        public void coleccionFacturas(string fechaInicio, string fechaFin)
+        {
+            string SQL_p;
+            MySqlDataReader Reader;
+
+            SQL_p = "SELECT factura.idfactura,factura.fecha,factura.tipofactura,factura.codigofactura,factura.saldo, "+
+	                "factura.bonificacion,reparacion.fecha,reparacion.codigoreparacion,SUM(pagosreparacion.importepago) AS importe_total " +
+                    "FROM pagosreparacion INNER JOIN factura INNER JOIN reparacion " +
+                    "ON factura.reparacion_idreparacion = reparacion.idreparacion AND pagosreparacion.factura_idfactura = factura.idfactura " +
+                    "WHERE factura.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' AND factura.anulada = 0 "+
+                    "GROUP BY factura.idfactura " +
+                    "ORDER BY factura.fecha";
+
+            Reader = Conector.consultar(SQL_p);
+
+            while (Reader.Read())
+            {
+                Factura objFactura = new Factura();
+                objFactura.IdFactura = Reader.GetInt32("idfactura");
+                objFactura.FechaFactura = Reader.GetDateTime("fecha");
+                objFactura.TipoFactura = Reader.GetString("tipofactura");
+                objFactura.NumeroFactura = Reader.GetString("codigofactura");
+                objFactura.Saldo = Reader.GetDouble("saldo");
+                objFactura.Bonificacion = Reader.GetDouble("bonificacion");
+                objFactura.ImporteFactura = Reader.GetDouble("importe_total");
+                objFactura.Reparacion.Fecha = Reader.GetDateTime("fecha");
+                objFactura.Reparacion.CodigoReparacion = Reader.GetString("codigoreparacion");                
+
+                DetalleFacturas.Add(objFactura);
+
+            }
+            Reader.Close();
+        }
+        //FIN CODIGO NUEVO
     }
 }

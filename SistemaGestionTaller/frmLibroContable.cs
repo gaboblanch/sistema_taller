@@ -80,7 +80,7 @@ namespace SistemaGestionTaller
             ingreso.DetalleTareas.Clear();
             this.dataGridIngreso.Rows.Clear();
 
-            ingreso.coleccionRepuestoGenericos(
+            /*ingreso.coleccionRepuestoGenericos(
                                                 String.Format("{0:yyyy/MM/dd}", Inicio),
                                                 String.Format("{0:yyyy/MM/dd}", Fin));
 
@@ -94,13 +94,17 @@ namespace SistemaGestionTaller
 
             ingreso.coleccionTareasGenericas(
                                             String.Format("{0:yyyy/MM/dd}", Inicio),
-                                            String.Format("{0:yyyy/MM/dd}", Fin));
+                                            String.Format("{0:yyyy/MM/dd}", Fin));*/
 
             colIngresos = ingreso.coleccion(
                                             String.Format("{0:yyyy/MM/dd}", Inicio),
                                             String.Format("{0:yyyy/MM/dd}", Fin));
-            
-            for (int i = 0; i < ingreso.DetalleRepuestos.Count; i++)
+            //INICIO CODIGO NUEVO
+            ingreso.coleccionFacturas(
+                                    String.Format("{0:yyyy/MM/dd}", Inicio),
+                                    String.Format("{0:yyyy/MM/dd}", Fin));
+            //FIN CODIGO NUEVO
+            /*for (int i = 0; i < ingreso.DetalleRepuestos.Count; i++)
             {
                 this.dataGridIngreso.Rows.Add();
                 this.dataGridIngreso.Rows[i].Cells["tipo"].Value = ((RepuestoReparacion)ingreso.DetalleRepuestos[i]).DescripcionTipo;
@@ -116,8 +120,17 @@ namespace SistemaGestionTaller
                 this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["descripcion"].Value = ((TareaReparacion)ingreso.DetalleTareas[i]).DescripcionTarea;
                 this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["importe"].Value = ((TareaReparacion)ingreso.DetalleTareas[i]).CostoTotal;
                 this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["fechaingreso"].Value = ((TareaReparacion)ingreso.DetalleTareas[i]).Fecha;
+            }*/
+            //INICIO CODIGO NUEVO
+            for (int i = 0; i < ingreso.DetalleFacturas.Count; i++)
+            {
+                this.dataGridIngreso.Rows.Add();
+                this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["tipo"].Value = "FACTURA " + ((Factura)ingreso.DetalleFacturas[i]).TipoFactura;
+                this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["descripcion"].Value = "Factura Número: " + ((Factura)ingreso.DetalleFacturas[i]).NumeroFactura + " (Saldo: " + ((Factura)ingreso.DetalleFacturas[i]).Saldo + ")";
+                this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["importe"].Value = ((Factura)ingreso.DetalleFacturas[i]).ImporteFactura;
+                this.dataGridIngreso.Rows[i + ingreso.DetalleRepuestos.Count].Cells["fechaingreso"].Value = ((Factura)ingreso.DetalleFacturas[i]).FechaFactura;
             }
-
+            //FIN CODIGO NUEVO
             for (int i = 0; i < colIngresos.Count; i++)
             {
                 this.dataGridIngreso.Rows.Add();
@@ -138,22 +151,26 @@ namespace SistemaGestionTaller
             egreso.DetalleRepuestos.Clear();
             this.dataGridEgreso.Rows.Clear();
 
-            egreso.coleccionRepuestoStock(
+            /*egreso.coleccionRepuestoStock(
                                             String.Format("{0:yyyy/MM/dd}", Inicio),
-                                            String.Format("{0:yyyy/MM/dd}", Fin));
-
+                                            String.Format("{0:yyyy/MM/dd}", Fin));*/
             colEgresos = egreso.coleccion(
                                             String.Format("{0:yyyy/MM/dd}", Inicio),
                                             String.Format("{0:yyyy/MM/dd}", Fin));
+            //INICIO CODIGO NUEVO PARA EGRESOS
+            colEgresos.AddRange(egreso.coleccionReparaciones(
+                                            String.Format("{0:yyyy/MM/dd}", Inicio),
+                                            String.Format("{0:yyyy/MM/dd}", Fin)));
+            //FIN CODIGO NUEVO PARA EGRESOS
 
-            for (int i = 0; i < egreso.DetalleRepuestos.Count; i++)
+            /*for (int i = 0; i < egreso.DetalleRepuestos.Count; i++)
             {
                 this.dataGridEgreso.Rows.Add();
                 this.dataGridEgreso.Rows[i].Cells["tipoegreso"].Value = ((RepuestoReparacion)egreso.DetalleRepuestos[i]).DescripcionTipo;
                 this.dataGridEgreso.Rows[i].Cells["descripcionegreso"].Value = ((RepuestoReparacion)egreso.DetalleRepuestos[i]).DescripcionRepuesto;
                 this.dataGridEgreso.Rows[i].Cells["importeegreso"].Value = ((RepuestoReparacion)egreso.DetalleRepuestos[i]).CostoTotal;
                 this.dataGridEgreso.Rows[i].Cells["fechaegreso"].Value = ((RepuestoReparacion)egreso.DetalleRepuestos[i]).FechaInicio;
-            }
+            }*/
 
             for (int i = 0; i < colEgresos.Count; i++)
             {

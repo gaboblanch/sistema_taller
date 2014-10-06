@@ -1411,7 +1411,7 @@ namespace SistemaGestionTaller
                 try
                 {
                     reparacion.FechaSistema = DateTime.Now;
-                    reparacion.Fecha = this.dateTimePicker1.Value;
+                    reparacion.Fecha = DateTime.Now;
                     reparacion.Descripcion = this.textDescripcion.Text.ToUpper();
                     reparacion.ImporteTotal = Convert.ToDouble(this.textTotal.Text.Substring(1, this.textTotal.Text.Length - 1));
                     reparacion.CodigoReparacion = this.labelCodigoReparacion.Text;
@@ -1503,9 +1503,7 @@ namespace SistemaGestionTaller
                 MessageBox.Show("Debe seleccionar un cliente a editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-        }
-
-        
+        } 
 
     }
 }

@@ -13,6 +13,10 @@ namespace SistemaGestionTaller
     public partial class frmGestionCliente : Form
     {
         private Cliente cliente;
+        private DateTime lastLoading;
+        private int firstVisibleRow;
+        private bool flagDataGrid = false;
+        ArrayList colClientes;
 
         public frmGestionCliente()
         {
@@ -24,16 +28,16 @@ namespace SistemaGestionTaller
             this.buttonEditar.Enabled = false;
             this.buttonEliminar.Enabled = false;
 
-            ArrayList colClientes = new ArrayList();
-
-            cliente.Filtro = this.textFiltro.Text;
-
-            if (this.comboBox1.SelectedIndex == 0)
+            if (this.textNombre.Text != "")
             {
                 //BUSQUEDA POR APELLIDO
+                this.dataGridCliente.Rows.Clear();
                 try
                 {
+                    cliente.Filtro = this.textNombre.Text;
+                    colClientes.Clear();
                     colClientes = cliente.coleccion();
+                    flagDataGrid = true;
                 }
                 catch (MySql.Data.MySqlClient.MySqlException e)
                 {
@@ -42,12 +46,36 @@ namespace SistemaGestionTaller
                     return;
                 }
             }
-            else
+            else if (this.textDominio.Text != "")
             {
                 //BUSQUEDA POR DOMINIO
+                this.dataGridCliente.Rows.Clear();
                 try
                 {
+                    cliente.Filtro = this.textDominio.Text;
+                    colClientes.Clear();
                     colClientes = cliente.coleccionDominio();
+                    flagDataGrid = true;
+                }
+                catch (MySql.Data.MySqlClient.MySqlException e)
+                {
+                    MessageBox.Show("Error: " + e, "ERROR");
+                    this.Dispose();
+                    return;
+                }
+            }
+            else
+            {
+                try
+                {
+                    if (flagDataGrid)
+                    {
+                        cliente.Filtro = "";
+                        this.dataGridCliente.Rows.Clear();
+                        colClientes.Clear();
+                        flagDataGrid = false;
+                    }
+                    colClientes.AddRange(cliente.coleccion());
                 }
                 catch (MySql.Data.MySqlClient.MySqlException e)
                 {
@@ -58,27 +86,33 @@ namespace SistemaGestionTaller
             }
             
 
-            this.dataGridCliente.Rows.Clear();
+            //this.dataGridCliente.Rows.Clear();
 
             for (int i = 0; i < colClientes.Count; i++)
             {
-                Cliente objClienteLocal = new Cliente();
+                if (i == 0)
+                {
+                    i = this.dataGridCliente.Rows.Count;
+                }
 
-                objClienteLocal = (Cliente)colClientes[i];
-                objClienteLocal.getDeuda();
+                if (i == colClientes.Count)
+                {
+                    return;
+                }
+
                 this.dataGridCliente.Rows.Add();
-                this.dataGridCliente.Rows[i].Cells["idcliente"].Value = objClienteLocal.Id.ToString();
-                this.dataGridCliente.Rows[i].Cells["dni"].Value = objClienteLocal.Dni;
-                this.dataGridCliente.Rows[i].Cells["nombreRazonSocial"].Value = objClienteLocal.NombreRazonSocial;
-                this.dataGridCliente.Rows[i].Cells["email"].Value = objClienteLocal.Email;
-                this.dataGridCliente.Rows[i].Cells["cuit"].Value = objClienteLocal.Cuit;
-                this.dataGridCliente.Rows[i].Cells["telefono"].Value = objClienteLocal.Telefono;
-                this.dataGridCliente.Rows[i].Cells["direccion"].Value = objClienteLocal.Direccion;
-                this.dataGridCliente.Rows[i].Cells["cp"].Value = objClienteLocal.Cp;
-                this.dataGridCliente.Rows[i].Cells["localidad"].Value = objClienteLocal.Localidad;
-                this.dataGridCliente.Rows[i].Cells["provincia"].Value = objClienteLocal.Provincia;
-                this.dataGridCliente.Rows[i].Cells["deuda"].Value = objClienteLocal.Deuda;
-                this.dataGridCliente.Rows[i].Cells["observaciones"].Value = objClienteLocal.Observaciones;
+                this.dataGridCliente.Rows[i].Cells["idcliente"].Value = ((Cliente)colClientes[i]).Id.ToString();
+                this.dataGridCliente.Rows[i].Cells["dni"].Value = ((Cliente)colClientes[i]).Dni;
+                this.dataGridCliente.Rows[i].Cells["nombreRazonSocial"].Value = ((Cliente)colClientes[i]).NombreRazonSocial;
+                this.dataGridCliente.Rows[i].Cells["email"].Value = ((Cliente)colClientes[i]).Email;
+                this.dataGridCliente.Rows[i].Cells["cuit"].Value = ((Cliente)colClientes[i]).Cuit;
+                this.dataGridCliente.Rows[i].Cells["telefono"].Value = ((Cliente)colClientes[i]).Telefono;
+                this.dataGridCliente.Rows[i].Cells["direccion"].Value = ((Cliente)colClientes[i]).Direccion;
+                this.dataGridCliente.Rows[i].Cells["cp"].Value = ((Cliente)colClientes[i]).Cp;
+                this.dataGridCliente.Rows[i].Cells["localidad"].Value = ((Cliente)colClientes[i]).Localidad;
+                this.dataGridCliente.Rows[i].Cells["provincia"].Value = ((Cliente)colClientes[i]).Provincia;
+                this.dataGridCliente.Rows[i].Cells["deuda"].Value = ((Cliente)colClientes[i]).Deuda;
+                this.dataGridCliente.Rows[i].Cells["observaciones"].Value = ((Cliente)colClientes[i]).Observaciones;
                 
                 
                 this.dataGridCliente.ClearSelection();
@@ -119,7 +153,8 @@ namespace SistemaGestionTaller
         private void frmGestionCliente_Load(object sender, EventArgs e)
         {
             cliente = new Cliente();
-            this.comboBox1.SelectedIndex = 0;
+            cliente.queryDataGridLimit();
+            colClientes = new ArrayList();
             llenarDataGrid();
         }
 
@@ -150,6 +185,42 @@ namespace SistemaGestionTaller
             {
                 this.buttonEliminar.PerformClick();
             }
+        }
+        
+        //CODIGO DE PRUEBA
+        private int GetDisplayedRowsCount()
+        {
+            int count = dataGridCliente.Rows[dataGridCliente.FirstDisplayedScrollingRowIndex].Height;
+            count = dataGridCliente.Height / count;
+            return count;
+        }
+        //TERMINA CODIGO DE PRUEBA
+        private void dataGridCliente_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.Type == ScrollEventType.SmallIncrement || e.Type == ScrollEventType.LargeIncrement)
+            {
+                if (e.NewValue >= dataGridCliente.Rows.Count - GetDisplayedRowsCount() && cliente.DataGridLimit > dataGridCliente.Rows.Count)
+                {
+                    //prevent loading from autoscroll.
+                    TimeSpan ts = DateTime.Now - lastLoading;
+                    if (ts.TotalMilliseconds > 200)
+                    {
+                        firstVisibleRow = e.NewValue;
+                        cliente.MySQLLimit += 30;
+                        llenarDataGrid();
+                        dataGridCliente.FirstDisplayedScrollingRowIndex = e.OldValue;
+                    }
+                    else
+                    {
+                        dataGridCliente.FirstDisplayedScrollingRowIndex = e.OldValue;
+                    }
+                }
+            }
+        }
+
+        private void textNombre_TextChanged(object sender, EventArgs e)
+        {
+            this.llenarDataGrid();
         }
 
         

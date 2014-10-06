@@ -14,6 +14,11 @@ namespace SistemaGestionTaller
     {
         private RepuestoReparacion repuesto;
         private ArrayList colRepuestosDetalle;
+        private static ArrayList colRepuestos;
+
+        private DateTime lastLoading;
+        private int firstVisibleRow;
+        private bool flagDataGrid = false;
 
         //DELEGACION Y EVENTO PARA PASAR PARAMETROS DE UN FORM A OTRO
         public delegate void BuscarRepuestoHandler(object sender, BuscarRepuestoEventArgs e);
@@ -23,7 +28,18 @@ namespace SistemaGestionTaller
         {
             InitializeComponent();
             colRepuestosDetalle = new ArrayList();
+            
         }
+
+        //CODIGO DE PRUEBA
+        private int GetDisplayedRowsCount()
+        {
+            int count = dataGridRepuesto.Rows[dataGridRepuesto.FirstDisplayedScrollingRowIndex].Height;
+            count = dataGridRepuesto.Height / count;
+            return count;
+        }
+        //TERMINA CODIGO DE PRUEBA
+
 
         /// <summary>
         /// Pasamos como parametro una lista de los repuestos ya utilizados en la reparacion
@@ -38,26 +54,46 @@ namespace SistemaGestionTaller
 
         private void llenarListBox()
         {
-            ArrayList colRepuestos = new ArrayList();
+            
             Repuesto objRepuestoLocal = new Repuesto();
             repuesto.Filtro = textFiltro.Text;
 
-            if (this.comboBoxBuscar.SelectedIndex == 1)
+            if (this.comboBoxBuscar.SelectedIndex == 1 && this.textFiltro.Text != "")
             {
                 //BUSCAR POR DESCRIPCION
+                repuesto.MySQLLimit = 0;
                 colRepuestos = repuesto.coleccionRepuestos();
+                this.dataGridRepuesto.Rows.Clear();
+                flagDataGrid = true;
+            }
+            else if (this.comboBoxBuscar.SelectedIndex == 0 && this.textFiltro.Text != "")
+            {
+                //BUSCAR POR CODIGO
+                repuesto.MySQLLimit = 0;
+                colRepuestos.AddRange(repuesto.coleccionCodigoRepuestos());
+                this.dataGridRepuesto.Rows.Clear();
+                flagDataGrid = true;
             }
             else
             {
+                if (flagDataGrid)
+                {
+                    repuesto.Filtro = "";
+                    this.dataGridRepuesto.Rows.Clear();
+                    colRepuestos.Clear();
+                    flagDataGrid = false;
+                }
                 //BUSCAR POR CODIGO
-                colRepuestos = repuesto.coleccionCodigoRepuestos();
+                colRepuestos.AddRange(repuesto.coleccionCodigoRepuestos());
             }
-            
-
-            this.dataGridRepuesto.Rows.Clear();
 
             for (int i = 0; i < colRepuestos.Count; i++)
             {
+                if (i == 0)
+                {
+                    i = this.dataGridRepuesto.Rows.Count;
+                }
+
                 objRepuestoLocal = (Repuesto)colRepuestos[i];
 
                 if (colRepuestosDetalle.IndexOf(objRepuestoLocal.IdRepuesto) < 0)
@@ -95,6 +131,8 @@ namespace SistemaGestionTaller
         private void frmBuscarRepuesto_Load(object sender, EventArgs e)
         {
             repuesto = new RepuestoReparacion();
+            repuesto.queryDataGridLimit(false);
+            colRepuestos = new ArrayList();
             this.comboBoxBuscar.SelectedIndex = 1;
             llenarListBox();
 
@@ -126,5 +164,46 @@ namespace SistemaGestionTaller
 
             this.Close();
         }
+
+        private void dataGridRepuesto_Scroll(object sender, ScrollEventArgs e)
+        {
+            if (e.Type == ScrollEventType.SmallIncrement || e.Type == ScrollEventType.LargeIncrement)
+            {
+                if (e.NewValue >= dataGridRepuesto.Rows.Count - GetDisplayedRowsCount() && repuesto.DataGridLimit > dataGridRepuesto.Rows.Count)
+                {
+                    //prevent loading from autoscroll.
+                    TimeSpan ts = DateTime.Now - lastLoading;
+                    if (ts.TotalMilliseconds > 100)
+                    {
+                        firstVisibleRow = e.NewValue;
+                        repuesto.MySQLLimit += 30;
+                        llenarListBox();
+                        dataGridRepuesto.FirstDisplayedScrollingRowIndex = e.OldValue;
+                    }
+                    else
+                    {
+                        dataGridRepuesto.FirstDisplayedScrollingRowIndex = e.OldValue;
+                    }
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.dataGridRepuesto.Rows[this.dataGridRepuesto.CurrentCell.RowIndex].Cells["idRepuesto"].Value != null)
+            {
+                frmAgregarEditarRepuestoUnico faer = new frmAgregarEditarRepuestoUnico(Convert.ToInt32(dataGridRepuesto.Rows[this.dataGridRepuesto.CurrentCell.RowIndex].Cells["idRepuesto"].Value));
+                faer.actualizarDataGridEvento += new frmAgregarEditarRepuestoUnico.actualizarDataGrid(llenarListBox);
+                faer.MdiParent = this.MdiParent;
+                faer.Show();
+                this.flagDataGrid = true;
+            }
+        }
+
+        private void dataGridRepuesto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.buttonEditarRepuesto.Enabled = true;
+        }
+
     }
 }

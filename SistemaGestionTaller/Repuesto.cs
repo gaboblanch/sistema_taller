@@ -30,6 +30,8 @@ namespace SistemaGestionTaller
         protected DateTime fechafin;
         protected double preciohistorial;
         protected double minimoStockHistorial;
+        protected int limit;
+        protected int dataGridLimit;
 
         public Repuesto()
         {
@@ -152,6 +154,53 @@ namespace SistemaGestionTaller
             set { minimoStockHistorial = value; }
         }
 
+        public int MySQLLimit
+        {
+            get { return limit; }
+            set { limit = value; }
+        }
+
+        public int DataGridLimit
+        {
+            get { return dataGridLimit; }
+            set { dataGridLimit = value; }
+        }
+
+        public void queryDataGridLimit(bool flagGas)
+        {
+            if (flagGas)
+            {
+                string SQL_p;
+                MySqlDataReader Reader;
+
+                SQL_p = "SELECT COUNT(*) as totalrepuestos FROM repuestostock";
+
+                Reader = Conector.consultar(SQL_p);
+
+                if (Reader.Read())
+                {
+                    this.DataGridLimit = Reader.GetInt32("totalrepuestos");
+                }
+                Reader.Close();
+            }
+            else
+            {
+                string SQL_p;
+                MySqlDataReader Reader;
+
+                SQL_p = "SELECT COUNT(*) as totalrepuestos FROM repuestostock "+
+                        "INNER JOIN tipo ON tipo.idtipo = repuestostock.tipo_idtipo WHERE tipo.gas='0'";
+
+                Reader = Conector.consultar(SQL_p);
+
+                if (Reader.Read())
+                {
+                    this.DataGridLimit = Reader.GetInt32("totalrepuestos");
+                }
+                Reader.Close();
+            }
+        }
+
         //LISTADO DE REPUESTOS DISPONIBLES
         public override ArrayList coleccion()
         {
@@ -165,7 +214,8 @@ namespace SistemaGestionTaller
                     "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "WHERE repuestostock.descripcion LIKE '%"+filtro+"%' "+
                     "GROUP BY repuestostock.idrepuestostock " +
-                    "ORDER BY marca, modelo";
+                    "ORDER BY marca, modelo "+
+                    "LIMIT "+ this.MySQLLimit +",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -201,6 +251,7 @@ namespace SistemaGestionTaller
                 objRespuestoLocal.Proveedor.NombreRazonSocial = Reader.GetString("razonsocial");
                 
                 colRepuestos.Add(objRespuestoLocal);
+
             }
 
             Reader.Close();
@@ -220,7 +271,8 @@ namespace SistemaGestionTaller
                     "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "WHERE repuestostock.codigorepuesto LIKE '%" + filtro + "%' AND tipo.gas = '0' " +
                     "GROUP BY repuestostock.idrepuestostock " +
-                    "ORDER BY marca, modelo";
+                    "ORDER BY marca, modelo " +
+                    "LIMIT " + this.MySQLLimit + ",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -277,7 +329,8 @@ namespace SistemaGestionTaller
                     "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "WHERE repuestostock.marca LIKE '%" + filtro + "%' OR repuestostock.modelo LIKE '%" + filtro + "%' AND tipo.gas = '0' " +
                     "GROUP BY repuestostock.idrepuestostock " +
-                    "ORDER BY marca, modelo";
+                    "ORDER BY marca, modelo " +
+                    "LIMIT " + this.MySQLLimit + ",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -330,9 +383,10 @@ namespace SistemaGestionTaller
                     "FROM repuestostock INNER JOIN tipo INNER JOIN proveedor INNER JOIN historialprecio " +
                     "ON tipo.idtipo = repuestostock.tipo_idtipo AND repuestostock.proveedor_idproveedor=proveedor.idproveedor " +
                     "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
-                    "WHERE repuestostock.codigorepuesto LIKE '%" + filtro + "%' AND tipo.gas='0'" +
+                    "WHERE repuestostock.codigorepuesto LIKE '%" + filtro + "%' AND tipo.gas='0' " +
                     "GROUP BY repuestostock.idrepuestostock " +
-                    "ORDER BY marca, modelo";
+                    "ORDER BY marca, modelo " +
+                    "LIMIT " + this.MySQLLimit + ",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -389,7 +443,8 @@ namespace SistemaGestionTaller
                     "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
                     "WHERE repuestostock.codigorepuesto LIKE '%" + filtro + "%' AND tipo.gas='1'" +
                     "GROUP BY repuestostock.idrepuestostock " +
-                    "ORDER BY marca, modelo";
+                    "ORDER BY marca, modelo " +
+                    "LIMIT " + this.MySQLLimit + ",30";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -685,6 +740,62 @@ namespace SistemaGestionTaller
             string SQL_p;
             SQL_p = "UPDATE repuestostock SET precio = precio*'" + AumentoPrecio + "', costo=costo*'" + AumentoPrecio + "'";
             Conector.ejecutar(SQL_p);
+        }
+
+        //LISTADO DE REPUESTOS DISPONIBLES POR MARCA Y MODELO
+        public ArrayList coleccionProveedor()
+        {
+            string SQL_p;
+            MySqlDataReader Reader;
+            ArrayList colRepuestos = new ArrayList();
+
+            SQL_p = "SELECT repuestostock.*, tipo.descripciontipo, tipo.gas, proveedor.razonsocial, historialprecio.* " +
+                    "FROM repuestostock INNER JOIN tipo INNER JOIN proveedor INNER JOIN historialprecio " +
+                    "ON tipo.idtipo = repuestostock.tipo_idtipo AND repuestostock.proveedor_idproveedor=proveedor.idproveedor " +
+                    "AND historialprecio.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
+                    "WHERE proveedor.razonsocial LIKE '%" + filtro + "%' " +
+                    "GROUP BY repuestostock.idrepuestostock " +
+                    "ORDER BY marca, modelo " +
+                    "LIMIT " + this.MySQLLimit + ",30";
+
+            Reader = Conector.consultar(SQL_p);
+
+            while (Reader.Read())
+            {
+                Repuesto objRespuestoLocal = new Repuesto();
+
+                //TIPO REPUESTO
+                objRespuestoLocal.Idtipo = Reader.GetInt32("tipo_idtipo");
+                objRespuestoLocal.DescripcionTipo = Reader.GetString("descripciontipo");
+                objRespuestoLocal.Gas = Reader.GetInt32("gas");
+
+                //DATOS REPUESTO
+                objRespuestoLocal.IdRepuesto = Reader.GetInt32("idrepuestostock");
+                objRespuestoLocal.CodigoRepuesto = Reader.GetString("codigorepuesto");
+                objRespuestoLocal.DescripcionRepuesto = Reader.GetString("descripcion");
+                objRespuestoLocal.Marca = Reader.GetString("marca");
+                objRespuestoLocal.Modelo = Reader.GetString("modelo");
+                objRespuestoLocal.CantidadStock = Reader.GetDouble("cantidad");
+                objRespuestoLocal.Costo = Reader.GetDouble("costo");
+                objRespuestoLocal.PrecioUnitario = Reader.GetDouble("precio");
+                objRespuestoLocal.MinimoStock = Reader.GetDouble("minimo");
+
+                //DATOS HISTORICOS
+                objRespuestoLocal.IdHistorial = Reader.GetInt32("idhistorialprecio");
+                objRespuestoLocal.FechaInicio = Reader.GetDateTime("fechainicio");
+                objRespuestoLocal.FechaFin = Reader.GetDateTime("fechafin");
+                objRespuestoLocal.PrecioHistorial = Reader.GetDouble("preciohistorial");
+                objRespuestoLocal.MinimoStockHistorial = Reader.GetDouble("cantidadminima");
+
+                //DATOS PROVEEDOR
+                objRespuestoLocal.Proveedor.Id = Reader.GetInt32("proveedor_idproveedor");
+                objRespuestoLocal.Proveedor.NombreRazonSocial = Reader.GetString("razonsocial");
+
+                colRepuestos.Add(objRespuestoLocal);
+            }
+
+            Reader.Close();
+            return colRepuestos;
         }
     }
 }

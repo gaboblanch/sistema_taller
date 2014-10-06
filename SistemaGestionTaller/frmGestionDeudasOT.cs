@@ -34,7 +34,7 @@ namespace SistemaGestionTaller
                 Reparacion objReparacionLocal = new Reparacion();
 
                 objReparacionLocal = (Reparacion)colReparacion[i];
-                objReparacionLocal.getReparacionSaldo();
+                //objReparacionLocal.getReparacionSaldo();
 
                 this.dataGridReparacion.Rows.Add();
 

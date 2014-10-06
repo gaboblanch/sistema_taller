@@ -427,6 +427,7 @@
             this.comboBoxTipoFactura.Name = "comboBoxTipoFactura";
             this.comboBoxTipoFactura.Size = new System.Drawing.Size(72, 39);
             this.comboBoxTipoFactura.TabIndex = 14;
+            this.comboBoxTipoFactura.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipoFactura_SelectedIndexChanged);
             // 
             // groupBox5
             // 

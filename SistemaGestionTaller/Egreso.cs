@@ -235,15 +235,11 @@ namespace SistemaGestionTaller
             string SQL_p;
             MySqlDataReader Reader;
 
-            SQL_p = "SELECT (SELECT IFNULL(SUM(egreso.importeegreso),0) " +
-                    "FROM egreso " +
-                    "WHERE egreso.fechaegreso BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "') " +
-                    "+" +
-                    "(SELECT IFNULL(SUM(repuestostock.costo),0) " +
-                    "FROM reparacion INNER JOIN repuestoreparacion INNER JOIN repuestostock " +
-                    "ON repuestostock.idrepuestostock = repuestoreparacion.repuestostock_idrepuestostock AND repuestoreparacion.reparacion_idreparacion = reparacion.idreparacion " +
-                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "')" +
-                    "AS totalegresos";
+            SQL_p = "SELECT (SELECT IFNULL(SUM(egreso.importeegreso),0) FROM egreso WHERE egreso.fechaegreso BETWEEN '2013/08/01' AND '2013/08/31') " +
+                    "+ (SELECT IFNULL(SUM(repuestostock.costo * repuestoreparacion.cantidadreparacion),0) "+
+                    "FROM reparacion INNER JOIN repuestoreparacion INNER JOIN repuestostock "+
+                    "ON repuestostock.idrepuestostock = repuestoreparacion.repuestostock_idrepuestostock AND repuestoreparacion.reparacion_idreparacion = reparacion.idreparacion "+
+                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' AND reparacion.codigoreparacion NOT LIKE 'PS-%') AS totalegresos";
 
             Reader = Conector.consultar(SQL_p);
 
@@ -257,6 +253,45 @@ namespace SistemaGestionTaller
             }
             Reader.Close();
         }
+        //INICIO CODIGO NUEVO
+        /// <summary>
+        /// Ingresos generados por repuestos agregados manualmente
+        /// </summary>
+        /// <param name="fechaInicio"></param>
+        /// <param name="fechaFin"></param>
+        /// <returns>Coleccion de repuestos de stock</returns>
+        public ArrayList coleccionReparaciones(string fechaInicio, string fechaFin)
+        {
+            string SQL_p;
+            MySqlDataReader Reader;
+            ArrayList colCostosFacturados = new ArrayList();
 
+            SQL_p = "SELECT repuestostock.idrepuestostock, reparacion.codigoreparacion, reparacion.fecha, " +
+                    "(repuestoreparacion.cantidadreparacion * repuestostock.costo) AS costo_total " +
+                    "FROM reparacion INNER JOIN repuestoreparacion INNER JOIN repuestostock " +
+                    "ON reparacion.idreparacion = repuestoreparacion.reparacion_idreparacion AND " +
+                    "repuestoreparacion.repuestostock_idrepuestostock = repuestostock.idrepuestostock " +
+                    "WHERE reparacion.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' AND reparacion.codigoreparacion NOT LIKE 'PS-%' " +
+                    "GROUP BY repuestostock.idrepuestostock ORDER BY reparacion.fecha";
+
+            Reader = Conector.consultar(SQL_p);
+
+            while (Reader.Read())
+            {
+                Egreso costoFactura = new Egreso();
+                //Datos Repuesto Manual
+                costoFactura.IdEgreso = Reader.GetInt32("idrepuestostock");
+                costoFactura.Descripcion = "Reparación: " + Reader.GetString("codigoreparacion") + " - Respuesto Cod.: " + Reader.GetString("idrepuestostock");
+                costoFactura.Importe = Reader.GetDouble("costo_total");
+                costoFactura.Fecha = Reader.GetDateTime("fecha");
+
+                colCostosFacturados.Add(costoFactura);
+
+            }
+            Reader.Close();
+
+            return colCostosFacturados;
+        }
+        //FIN CODIGO NUEVO
     }
 }
