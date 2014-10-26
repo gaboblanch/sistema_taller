@@ -125,6 +125,11 @@ namespace SistemaGestionTaller
         {
             if (this.buttonGuardar.Text == "Terminar")
             {
+                if (actualizarDataGridEvento != null)
+                {
+                    this.actualizarDataGridEvento();
+                }
+                
                 this.Close();
                 return;
             }
@@ -156,7 +161,7 @@ namespace SistemaGestionTaller
             if (flagEditar)
             {
                 repuesto.actualizar();
-                this.actualizarDataGridEvento();
+                //this.actualizarDataGridEvento();
                 if (textCantidad.Text != "")
                     this.textStockDisponible.Text = (Convert.ToInt32(this.textCantidad.Text) + Convert.ToInt32(this.textStockDisponible.Text)).ToString();
                 else
@@ -166,14 +171,13 @@ namespace SistemaGestionTaller
                 this.buttonGuardar.Text = "Terminar";
                 this.buttonGuardar.TextAlign = ContentAlignment.MiddleCenter;
                 this.buttonGuardar.Image = null;
-                return;
             }
             else
             {
                 if (!repuesto.existeRepuesto())
                 {
                     repuesto.agregar();
-                    this.actualizarDataGridEvento();
+                    
                     this.textStockDisponible.Text = (Convert.ToInt32(this.textCantidad.Text) + Convert.ToInt32(this.textStockDisponible.Text)).ToString();
                     this.textCantidad.Text = "";
 
@@ -181,12 +185,10 @@ namespace SistemaGestionTaller
                     this.buttonGuardar.Text = "Terminar";
                     this.buttonGuardar.TextAlign = ContentAlignment.MiddleCenter;
                     this.buttonGuardar.Image = null;
-                    return;
                 }
                 else
                 {
                     MessageBox.Show("El repuesto ya existe.","Advertencia");
-                    return;
                 }
             }
         }
