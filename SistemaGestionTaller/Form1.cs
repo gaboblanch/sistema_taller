@@ -274,5 +274,6 @@ namespace SistemaGestionTaller
             ficd.MdiParent = this;
             ficd.Show();
         }
+
     }
 }

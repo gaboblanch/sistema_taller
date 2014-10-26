@@ -61,8 +61,6 @@
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repuestosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,8 +73,8 @@
             this.cajaDiariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.cajaDiariaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.inicializarCajaDiariaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -326,9 +324,7 @@
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.presupuestosToolStripMenuItem,
             this.reparacionToolStripMenuItem,
-            this.repuestosToolStripMenuItem1,
-            this.toolStripSeparator3,
-            this.facturaciónToolStripMenuItem});
+            this.repuestosToolStripMenuItem1});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
@@ -336,34 +332,23 @@
             // presupuestosToolStripMenuItem
             // 
             this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
-            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
             this.presupuestosToolStripMenuItem.Click += new System.EventHandler(this.presupuestosToolStripMenuItem_Click);
             // 
             // reparacionToolStripMenuItem
             // 
             this.reparacionToolStripMenuItem.Name = "reparacionToolStripMenuItem";
-            this.reparacionToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.reparacionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reparacionToolStripMenuItem.Text = "Reparacion";
             this.reparacionToolStripMenuItem.Click += new System.EventHandler(this.reparacionToolStripMenuItem_Click);
             // 
             // repuestosToolStripMenuItem1
             // 
             this.repuestosToolStripMenuItem1.Name = "repuestosToolStripMenuItem1";
-            this.repuestosToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.repuestosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.repuestosToolStripMenuItem1.Text = "Repuestos";
             this.repuestosToolStripMenuItem1.Click += new System.EventHandler(this.repuestosToolStripMenuItem1_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
-            // 
-            // facturaciónToolStripMenuItem
-            // 
-            this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
-            this.facturaciónToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.facturaciónToolStripMenuItem.Text = "Facturación";
             // 
             // turnosToolStripMenuItem1
             // 
@@ -459,6 +444,13 @@
             this.cajaDiariaToolStripMenuItem1.Text = "Caja Diaria";
             this.cajaDiariaToolStripMenuItem1.Click += new System.EventHandler(this.cajaDiariaToolStripMenuItem1_Click);
             // 
+            // inicializarCajaDiariaToolStripMenuItem
+            // 
+            this.inicializarCajaDiariaToolStripMenuItem.Name = "inicializarCajaDiariaToolStripMenuItem";
+            this.inicializarCajaDiariaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.inicializarCajaDiariaToolStripMenuItem.Text = "Inicializar Caja Diaria";
+            this.inicializarCajaDiariaToolStripMenuItem.Click += new System.EventHandler(this.inicializarCajaDiariaToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 379);
@@ -466,13 +458,6 @@
             this.statusStrip1.Size = new System.Drawing.Size(881, 22);
             this.statusStrip1.TabIndex = 1;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // inicializarCajaDiariaToolStripMenuItem
-            // 
-            this.inicializarCajaDiariaToolStripMenuItem.Name = "inicializarCajaDiariaToolStripMenuItem";
-            this.inicializarCajaDiariaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.inicializarCajaDiariaToolStripMenuItem.Text = "Inicializar Caja Diaria";
-            this.inicializarCajaDiariaToolStripMenuItem.Click += new System.EventHandler(this.inicializarCajaDiariaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -512,10 +497,8 @@
         private System.Windows.Forms.ToolStripMenuItem ordenesDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem presupuestosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem repuestosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem ventaDeRepuestosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reparacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem turnosToolStripMenuItem1;
