@@ -267,7 +267,7 @@
             this.groupBox2.Size = new System.Drawing.Size(389, 161);
             this.groupBox2.TabIndex = 18;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vehículos";
+            this.groupBox2.Visible = false;
             // 
             // buttonEditar
             // 
@@ -293,7 +293,7 @@
             // 
             this.buttonGuardar.Image = global::SistemaGestionTaller.Properties.Resources.guardar_documento_icono_7840_48;
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardar.Location = new System.Drawing.Point(530, 357);
+            this.buttonGuardar.Location = new System.Drawing.Point(530, 253);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(102, 54);
             this.buttonGuardar.TabIndex = 12;
@@ -316,7 +316,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 421);
+            this.ClientSize = new System.Drawing.Size(657, 313);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

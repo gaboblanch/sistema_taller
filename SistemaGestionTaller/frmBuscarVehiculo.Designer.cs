@@ -74,7 +74,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmBuscarVehiculo";
-            this.Text = "Buscar Vehículo";
+            this.Text = "Buscar Mobil";
             this.Load += new System.EventHandler(this.frmBuscarVehiculo_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
