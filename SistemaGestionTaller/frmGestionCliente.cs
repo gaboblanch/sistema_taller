@@ -54,7 +54,7 @@ namespace SistemaGestionTaller
                 {
                     cliente.Filtro = this.textDominio.Text;
                     colClientes.Clear();
-                    colClientes = cliente.coleccionDominio();
+                    colClientes = cliente.coleccionDni();
                     flagDataGrid = true;
                 }
                 catch (MySql.Data.MySqlClient.MySqlException e)
@@ -222,7 +222,6 @@ namespace SistemaGestionTaller
         {
             this.llenarDataGrid();
         }
-
-        
+       
     }
 }

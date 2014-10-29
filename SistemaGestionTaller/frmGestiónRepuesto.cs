@@ -36,6 +36,10 @@ namespace SistemaGestionTaller
         //TERMINA CODIGO DE PRUEBA
         private void buttonEditar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            flagDataGrid = true;
+>>>>>>> fixesGabo
             int r = dataGridRepuesto.CurrentCell.RowIndex;
 
             frmAgregarEditarRepuestoUnico faer = new frmAgregarEditarRepuestoUnico(Convert.ToInt32(dataGridRepuesto.Rows[r].Cells["idRepuesto"].Value));
@@ -49,7 +53,10 @@ namespace SistemaGestionTaller
             repuesto = new Repuesto();
             repuesto.queryDataGridLimit(true);
             colRepuesto = new ArrayList();
+<<<<<<< HEAD
             //this.comboBoxBuscar.SelectedIndex = 1;
+=======
+>>>>>>> fixesGabo
             llenarDataGrid();
         }
 

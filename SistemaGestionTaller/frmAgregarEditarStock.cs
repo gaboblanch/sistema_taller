@@ -258,28 +258,8 @@ namespace SistemaGestionTaller
                 {
                     if (((Repuesto)proveedor.Repuestos[i]).IdRepuesto == (int)this.dataGridRepuesto.Rows[e.RowIndex].Cells["idrepuesto"].Value)
                     {
-                        //TIENE SIGNO $
-                        if (this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Contains('$'))
-                        {
-                            //TIENE COMA EN VEZ DE PUNTO
-                            if (this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Contains(','))
-                            {
-                                string costocadena = this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Replace(",", ".");
-                                ((Repuesto)proveedor.Repuestos[i]).Costo = Double.Parse(costocadena.Replace("$", ""));
-                                ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
-                            }
-                            else
-                            {
-                                ((Repuesto)proveedor.Repuestos[i]).Costo = Double.Parse(this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Replace("$", ""));
-                                ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
-                            }
-                        }
-                        else
-                        {
-                            ((Repuesto)proveedor.Repuestos[i]).Costo = Double.Parse(this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-                            ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
-                        }
-                        //this.llenarDataGrid();
+                        ((Repuesto)proveedor.Repuestos[i]).Costo = parsePrecioString(this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                        ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
                         break;
                     }
                 }
@@ -293,29 +273,9 @@ namespace SistemaGestionTaller
                 {
                     if (((Repuesto)proveedor.Repuestos[i]).IdRepuesto == (int)this.dataGridRepuesto.Rows[e.RowIndex].Cells["idrepuesto"].Value)
                     {
-                        //TIENE SIGNO $
-                        if (this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Contains('$'))
-                        {
-                            //TIENE COMA EN VEZ DE PUNTO
-                            if (this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Contains(','))
-                            {
-                                string preciocadena;
-                                preciocadena = this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Replace(",", ".");
-                                ((Repuesto)proveedor.Repuestos[i]).PrecioUnitario = Double.Parse(preciocadena.Replace("$", ""));
-                                ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
-                            }
-                            else
-                            {
-                                ((Repuesto)proveedor.Repuestos[i]).PrecioUnitario = Double.Parse(this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString().Replace("$", ""));
-                                ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
-                            }
-                        }
-                        else
-                        {
-                            ((Repuesto)proveedor.Repuestos[i]).PrecioUnitario = Double.Parse(this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
-                            ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
-                        }
-                        //this.llenarDataGrid();
+
+                        ((Repuesto)proveedor.Repuestos[i]).PrecioUnitario = parsePrecioString(this.dataGridRepuesto.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                        ((Repuesto)proveedor.Repuestos[i]).FechaFin = this.dateTimePicker1.Value;
                         break;
                     }
                 }
@@ -333,6 +293,28 @@ namespace SistemaGestionTaller
             faer.Show();
         }
 
-        
+        private Double parsePrecioString(string precio_p)
+        {
+            string precio = precio_p;
+            if (precio != null)
+            {
+                if (precio.Contains("$"))
+                {
+                    precio = precio.Replace("$", "");
+                }
+
+                if (precio.Contains(","))
+                {
+                    precio = precio.Replace(",", ".");
+                }
+
+            }
+            else
+            {
+                precio = "0";
+            }
+
+            return Double.Parse(precio);
+        }
     }
 }

@@ -99,6 +99,49 @@ namespace SistemaGestionTaller
             return colClientes;
         }
 
+        public ArrayList coleccionDni()
+        {
+            string SQL_p;
+            MySqlDataReader Reader;
+            ArrayList colClientes = new ArrayList();
+
+            SQL_p = "SELECT cliente.*, IFNULL(SUM(factura.saldo),0)AS saldo " +
+                    "FROM cliente LEFT JOIN factura " +
+                    "ON cliente.idcliente=factura.cliente_idcliente " +
+                    "WHERE cliente.dni LIKE '%" + filtro + "%' " +
+                    "GROUP BY cliente.idcliente " +
+                    "ORDER BY cliente.razonsocial " +
+                    "LIMIT " + this.MySQLLimit + ",30";
+
+            Reader = Conector.consultar(SQL_p);
+
+            while (Reader.Read())
+            {
+                Cliente objClienteLocal = new Cliente();
+
+                objClienteLocal.Id = Reader.GetInt32("idcliente");
+                objClienteLocal.NombreRazonSocial = Reader.GetString("razonsocial");
+                objClienteLocal.Cuit = Reader.GetString("cuit");
+                objClienteLocal.Direccion = Reader.GetString("direccion");
+                objClienteLocal.Telefono = Reader.GetString("telefono");
+                objClienteLocal.Cp = Reader.GetString("codigopostal");
+                objClienteLocal.Localidad = Reader.GetString("ciudad");
+                objClienteLocal.Provincia = Reader.GetString("provincia");
+                objClienteLocal.Dni = Reader.GetString("dni");
+                objClienteLocal.Email = Reader.GetString("email");
+                objClienteLocal.Observaciones = Reader.GetString("observaciones");
+                objClienteLocal.Deuda = Reader.GetDouble("saldo");
+
+                colClientes.Add(objClienteLocal);
+
+            }
+
+            Reader.Close();
+
+            return colClientes;
+
+        }
+
         public override ArrayList coleccion()
         {
             string SQL_p;

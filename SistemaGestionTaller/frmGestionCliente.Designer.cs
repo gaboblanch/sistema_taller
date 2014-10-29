@@ -57,9 +57,9 @@
             // 
             this.dataGridCliente.AllowUserToAddRows = false;
             this.dataGridCliente.AllowUserToDeleteRows = false;
-            this.dataGridCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridCliente.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idcliente,
@@ -185,7 +185,9 @@
             // 
             // textDominio
             // 
-            this.textDominio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDominio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textDominio.Location = new System.Drawing.Point(916, 16);
             this.textDominio.Name = "textDominio";
             this.textDominio.Size = new System.Drawing.Size(131, 20);
@@ -236,7 +238,9 @@
             // 
             // textNombre
             // 
-            this.textNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.textNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textNombre.Location = new System.Drawing.Point(709, 16);
             this.textNombre.Name = "textNombre";
             this.textNombre.Size = new System.Drawing.Size(131, 20);
@@ -257,9 +261,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(869, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(26, 13);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Dominio";
+            this.label2.Text = "DNI";
             // 
             // frmGestionCliente
             // 

@@ -60,7 +60,10 @@
             this.presupuestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.repuestosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.facturaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> fixesGabo
             this.turnosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -325,8 +328,12 @@
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.presupuestosToolStripMenuItem,
             this.reparacionToolStripMenuItem,
+<<<<<<< HEAD
             this.repuestosToolStripMenuItem1,
             this.facturaciónToolStripMenuItem});
+=======
+            this.repuestosToolStripMenuItem1});
+>>>>>>> fixesGabo
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ventasToolStripMenuItem.Text = "Ventas";
@@ -352,6 +359,7 @@
             this.repuestosToolStripMenuItem1.Text = "Repuestos";
             this.repuestosToolStripMenuItem1.Click += new System.EventHandler(this.repuestosToolStripMenuItem1_Click);
             // 
+<<<<<<< HEAD
             // facturaciónToolStripMenuItem
             // 
             this.facturaciónToolStripMenuItem.Name = "facturaciónToolStripMenuItem";
@@ -360,6 +368,8 @@
             this.facturaciónToolStripMenuItem.Visible = false;
             this.facturaciónToolStripMenuItem.Click += new System.EventHandler(this.facturaciónToolStripMenuItem_Click);
             // 
+=======
+>>>>>>> fixesGabo
             // turnosToolStripMenuItem1
             // 
             this.turnosToolStripMenuItem1.Enabled = false;
@@ -506,7 +516,6 @@
         private System.Windows.Forms.ToolStripMenuItem ordenesDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem presupuestosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facturaciónToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripMenuItem repuestosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventaDeRepuestosToolStripMenuItem;

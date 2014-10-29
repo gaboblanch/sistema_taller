@@ -275,9 +275,12 @@ namespace SistemaGestionTaller
             ficd.Show();
         }
 
+<<<<<<< HEAD
         private void facturaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
+=======
+>>>>>>> fixesGabo
     }
 }
