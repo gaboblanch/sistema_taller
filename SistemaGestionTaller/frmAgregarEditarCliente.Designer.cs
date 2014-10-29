@@ -46,16 +46,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textObservaciones = new System.Windows.Forms.RichTextBox();
-            this.buttonAgregarVehiculos = new System.Windows.Forms.Button();
-            this.listBoxVehiculos = new System.Windows.Forms.ListBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonEditar = new System.Windows.Forms.Button();
-            this.buttonQuitarVehiculos = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonAgregarVehiculos = new System.Windows.Forms.Button();
+            this.buttonQuitarVehiculos = new System.Windows.Forms.Button();
+            this.buttonEditar = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.listBoxVehiculos = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -236,64 +236,11 @@
             this.textObservaciones.Text = "";
             this.textObservaciones.TextChanged += new System.EventHandler(this.textObservaciones_TextChanged);
             // 
-            // buttonAgregarVehiculos
-            // 
-            this.buttonAgregarVehiculos.Location = new System.Drawing.Point(308, 19);
-            this.buttonAgregarVehiculos.Name = "buttonAgregarVehiculos";
-            this.buttonAgregarVehiculos.Size = new System.Drawing.Size(75, 23);
-            this.buttonAgregarVehiculos.TabIndex = 16;
-            this.buttonAgregarVehiculos.Text = "Agregar";
-            this.buttonAgregarVehiculos.UseVisualStyleBackColor = true;
-            this.buttonAgregarVehiculos.Click += new System.EventHandler(this.buttonAgregarVehiculos_Click);
-            // 
-            // listBoxVehiculos
-            // 
-            this.listBoxVehiculos.FormattingEnabled = true;
-            this.listBoxVehiculos.Location = new System.Drawing.Point(6, 19);
-            this.listBoxVehiculos.Name = "listBoxVehiculos";
-            this.listBoxVehiculos.Size = new System.Drawing.Size(296, 134);
-            this.listBoxVehiculos.TabIndex = 17;
-            this.listBoxVehiculos.SelectedIndexChanged += new System.EventHandler(this.listBoxVehiculos_SelectedIndexChanged);
-            this.listBoxVehiculos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxVehiculos_MouseDoubleClick);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.buttonEditar);
-            this.groupBox2.Controls.Add(this.buttonQuitarVehiculos);
-            this.groupBox2.Controls.Add(this.listBoxVehiculos);
-            this.groupBox2.Controls.Add(this.buttonAgregarVehiculos);
-            this.groupBox2.Location = new System.Drawing.Point(12, 250);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(389, 161);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Vehículos";
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Location = new System.Drawing.Point(308, 48);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
-            this.buttonEditar.TabIndex = 20;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
-            // 
-            // buttonQuitarVehiculos
-            // 
-            this.buttonQuitarVehiculos.Location = new System.Drawing.Point(308, 77);
-            this.buttonQuitarVehiculos.Name = "buttonQuitarVehiculos";
-            this.buttonQuitarVehiculos.Size = new System.Drawing.Size(75, 23);
-            this.buttonQuitarVehiculos.TabIndex = 19;
-            this.buttonQuitarVehiculos.Text = "Quitar";
-            this.buttonQuitarVehiculos.UseVisualStyleBackColor = true;
-            this.buttonQuitarVehiculos.Click += new System.EventHandler(this.buttonQuitarVehiculos_Click);
-            // 
             // buttonGuardar
             // 
             this.buttonGuardar.Image = global::SistemaGestionTaller.Properties.Resources.guardar_documento_icono_7840_48;
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardar.Location = new System.Drawing.Point(530, 357);
+            this.buttonGuardar.Location = new System.Drawing.Point(530, 269);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(102, 54);
             this.buttonGuardar.TabIndex = 12;
@@ -312,11 +259,66 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Observaciones";
             // 
+            // buttonAgregarVehiculos
+            // 
+            this.buttonAgregarVehiculos.Location = new System.Drawing.Point(308, 19);
+            this.buttonAgregarVehiculos.Name = "buttonAgregarVehiculos";
+            this.buttonAgregarVehiculos.Size = new System.Drawing.Size(75, 23);
+            this.buttonAgregarVehiculos.TabIndex = 16;
+            this.buttonAgregarVehiculos.Text = "Agregar";
+            this.buttonAgregarVehiculos.UseVisualStyleBackColor = true;
+            this.buttonAgregarVehiculos.Click += new System.EventHandler(this.buttonAgregarVehiculos_Click);
+            // 
+            // buttonQuitarVehiculos
+            // 
+            this.buttonQuitarVehiculos.Location = new System.Drawing.Point(308, 77);
+            this.buttonQuitarVehiculos.Name = "buttonQuitarVehiculos";
+            this.buttonQuitarVehiculos.Size = new System.Drawing.Size(75, 23);
+            this.buttonQuitarVehiculos.TabIndex = 19;
+            this.buttonQuitarVehiculos.Text = "Quitar";
+            this.buttonQuitarVehiculos.UseVisualStyleBackColor = true;
+            this.buttonQuitarVehiculos.Click += new System.EventHandler(this.buttonQuitarVehiculos_Click);
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Location = new System.Drawing.Point(308, 48);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(75, 23);
+            this.buttonEditar.TabIndex = 20;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.buttonEditar);
+            this.groupBox2.Controls.Add(this.buttonQuitarVehiculos);
+            this.groupBox2.Controls.Add(this.listBoxVehiculos);
+            this.groupBox2.Controls.Add(this.buttonAgregarVehiculos);
+            this.groupBox2.Location = new System.Drawing.Point(12, 250);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(389, 161);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Vehículos";
+            this.groupBox2.Visible = false;
+            // 
+            // listBoxVehiculos
+            // 
+            this.listBoxVehiculos.FormattingEnabled = true;
+            this.listBoxVehiculos.Location = new System.Drawing.Point(6, 19);
+            this.listBoxVehiculos.Name = "listBoxVehiculos";
+            this.listBoxVehiculos.Size = new System.Drawing.Size(296, 134);
+            this.listBoxVehiculos.TabIndex = 17;
+            this.listBoxVehiculos.Visible = false;
+            this.listBoxVehiculos.SelectedIndexChanged += new System.EventHandler(this.listBoxVehiculos_SelectedIndexChanged);
+            this.listBoxVehiculos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxVehiculos_MouseDoubleClick);
+            // 
             // frmAgregarEditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 421);
+            this.ClientSize = new System.Drawing.Size(643, 336);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -330,8 +332,8 @@
             this.Load += new System.EventHandler(this.frmAgregarEditarCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -351,17 +353,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox textObservaciones;
-        private System.Windows.Forms.Button buttonAgregarVehiculos;
-        private System.Windows.Forms.ListBox listBoxVehiculos;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button buttonQuitarVehiculos;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textCuit;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textCp;
-        private System.Windows.Forms.Button buttonEditar;
         private System.Windows.Forms.ComboBox comboBoxLocalidad;
+        private System.Windows.Forms.Button buttonAgregarVehiculos;
+        private System.Windows.Forms.Button buttonQuitarVehiculos;
+        private System.Windows.Forms.Button buttonEditar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox listBoxVehiculos;
     }
 }

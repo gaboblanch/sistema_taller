@@ -262,9 +262,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textObservaciones);
-            this.groupBox2.Location = new System.Drawing.Point(15, 309);
+            this.groupBox2.Location = new System.Drawing.Point(15, 198);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(694, 100);
+            this.groupBox2.Size = new System.Drawing.Size(694, 117);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Observaciones";
@@ -273,7 +273,7 @@
             // 
             this.buttonGuardar.Image = global::SistemaGestionTaller.Properties.Resources.guardar_documento_icono_7840_48;
             this.buttonGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGuardar.Location = new System.Drawing.Point(601, 420);
+            this.buttonGuardar.Location = new System.Drawing.Point(601, 345);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(102, 54);
             this.buttonGuardar.TabIndex = 0;
@@ -292,12 +292,13 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(15, 198);
+            this.groupBox3.Location = new System.Drawing.Point(21, 345);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(694, 100);
+            this.groupBox3.Size = new System.Drawing.Size(464, 63);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos :: Cuenta Bancaria";
+            this.groupBox3.Visible = false;
             // 
             // comboTipo
             // 
@@ -310,7 +311,7 @@
             "CAJA DE AHORRO (DOLARES)",
             "CUENTA CORRIENTE (PESOS)",
             "CUENTA CORRIENTE (DOLARES)"});
-            this.comboTipo.Location = new System.Drawing.Point(404, 28);
+            this.comboTipo.Location = new System.Drawing.Point(180, 28);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(259, 21);
             this.comboTipo.TabIndex = 7;
@@ -380,7 +381,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 486);
+            this.ClientSize = new System.Drawing.Size(727, 420);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.groupBox2);

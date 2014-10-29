@@ -274,5 +274,10 @@ namespace SistemaGestionTaller
             ficd.MdiParent = this;
             ficd.Show();
         }
+
+        private void facturaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

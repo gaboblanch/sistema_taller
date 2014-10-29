@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.labelCodigoReparacion = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -78,26 +78,6 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preciotarea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabGas = new System.Windows.Forms.TabPage();
-            this.dataGridGas = new System.Windows.Forms.DataGridView();
-            this.idgas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelogas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcagas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadgas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigogas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripciongas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preciogas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importegas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBoxCapacidad = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.buttonEliminarGas = new System.Windows.Forms.Button();
-            this.textBoxCantidadGas = new System.Windows.Forms.TextBox();
-            this.buttonAgregarGas = new System.Windows.Forms.Button();
-            this.textBoxTipoGas = new System.Windows.Forms.TextBox();
-            this.buttonBuscarGas = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.textTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -113,6 +93,26 @@
             this.buttonBuscarCliente = new System.Windows.Forms.Button();
             this.buttonDeshacer = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonBuscarGas = new System.Windows.Forms.Button();
+            this.textBoxTipoGas = new System.Windows.Forms.TextBox();
+            this.buttonAgregarGas = new System.Windows.Forms.Button();
+            this.textBoxCantidadGas = new System.Windows.Forms.TextBox();
+            this.buttonEliminarGas = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxCapacidad = new System.Windows.Forms.TextBox();
+            this.dataGridGas = new System.Windows.Forms.DataGridView();
+            this.importegas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preciogas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripciongas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigogas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadgas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcagas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelogas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabGas = new System.Windows.Forms.TabPage();
             this.groupBox9.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -123,11 +123,10 @@
             this.tabTareas.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalle)).BeginInit();
-            this.tabGas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridGas)).BeginInit();
-            this.groupBox8.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridGas)).BeginInit();
+            this.tabGas.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox9
@@ -236,8 +235,8 @@
             // 
             // idrepuesto
             // 
-            dataGridViewCellStyle1.NullValue = "0";
-            this.idrepuesto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.NullValue = "0";
+            this.idrepuesto.DefaultCellStyle = dataGridViewCellStyle7;
             this.idrepuesto.HeaderText = "ID";
             this.idrepuesto.Name = "idrepuesto";
             this.idrepuesto.ReadOnly = true;
@@ -279,10 +278,10 @@
             // preciorepuesto
             // 
             this.preciorepuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.preciorepuesto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.preciorepuesto.DefaultCellStyle = dataGridViewCellStyle8;
             this.preciorepuesto.HeaderText = "Precio Unitario";
             this.preciorepuesto.Name = "preciorepuesto";
             this.preciorepuesto.Width = 101;
@@ -290,12 +289,12 @@
             // importerepuesto
             // 
             this.importerepuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.importerepuesto.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.importerepuesto.DefaultCellStyle = dataGridViewCellStyle9;
             this.importerepuesto.HeaderText = "Importe";
             this.importerepuesto.Name = "importerepuesto";
             this.importerepuesto.ReadOnly = true;
@@ -525,8 +524,8 @@
             // cantidad
             // 
             this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle4.NullValue = "0";
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.NullValue = "0";
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle10;
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
             this.cantidad.Visible = false;
@@ -534,8 +533,8 @@
             // tiempo
             // 
             this.tiempo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle5.NullValue = "0";
-            this.tiempo.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.NullValue = "0";
+            this.tiempo.DefaultCellStyle = dataGridViewCellStyle11;
             this.tiempo.HeaderText = "Tiempo";
             this.tiempo.Name = "tiempo";
             this.tiempo.Visible = false;
@@ -543,225 +542,14 @@
             // preciotarea
             // 
             this.preciotarea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.Format = "C2";
-            this.preciotarea.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Format = "C2";
+            this.preciotarea.DefaultCellStyle = dataGridViewCellStyle12;
             this.preciotarea.HeaderText = "Importe";
             this.preciotarea.Name = "preciotarea";
             this.preciotarea.Width = 67;
-            // 
-            // tabGas
-            // 
-            this.tabGas.Controls.Add(this.dataGridGas);
-            this.tabGas.Controls.Add(this.groupBox8);
-            this.tabGas.Location = new System.Drawing.Point(4, 22);
-            this.tabGas.Name = "tabGas";
-            this.tabGas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGas.Size = new System.Drawing.Size(654, 285);
-            this.tabGas.TabIndex = 2;
-            this.tabGas.Text = "Carga de Gas";
-            this.tabGas.UseVisualStyleBackColor = true;
-            // 
-            // dataGridGas
-            // 
-            this.dataGridGas.AllowUserToAddRows = false;
-            this.dataGridGas.AllowUserToDeleteRows = false;
-            this.dataGridGas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridGas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idgas,
-            this.modelogas,
-            this.marcagas,
-            this.cantidadgas,
-            this.codigogas,
-            this.descripciongas,
-            this.preciogas,
-            this.importegas});
-            this.dataGridGas.Location = new System.Drawing.Point(19, 118);
-            this.dataGridGas.MultiSelect = false;
-            this.dataGridGas.Name = "dataGridGas";
-            this.dataGridGas.ReadOnly = true;
-            this.dataGridGas.RowHeadersVisible = false;
-            this.dataGridGas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridGas.Size = new System.Drawing.Size(619, 153);
-            this.dataGridGas.TabIndex = 18;
-            this.dataGridGas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridGas_CellClick);
-            // 
-            // idgas
-            // 
-            dataGridViewCellStyle7.NullValue = "0";
-            this.idgas.DefaultCellStyle = dataGridViewCellStyle7;
-            this.idgas.HeaderText = "ID";
-            this.idgas.Name = "idgas";
-            this.idgas.ReadOnly = true;
-            this.idgas.Visible = false;
-            // 
-            // modelogas
-            // 
-            this.modelogas.HeaderText = "Modelo";
-            this.modelogas.Name = "modelogas";
-            this.modelogas.ReadOnly = true;
-            this.modelogas.Visible = false;
-            // 
-            // marcagas
-            // 
-            this.marcagas.HeaderText = "Marca";
-            this.marcagas.Name = "marcagas";
-            this.marcagas.ReadOnly = true;
-            this.marcagas.Visible = false;
-            // 
-            // cantidadgas
-            // 
-            this.cantidadgas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cantidadgas.HeaderText = "Cantidad";
-            this.cantidadgas.Name = "cantidadgas";
-            this.cantidadgas.ReadOnly = true;
-            this.cantidadgas.Width = 74;
-            // 
-            // codigogas
-            // 
-            this.codigogas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.codigogas.HeaderText = "Código";
-            this.codigogas.Name = "codigogas";
-            this.codigogas.ReadOnly = true;
-            this.codigogas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codigogas.Width = 65;
-            // 
-            // descripciongas
-            // 
-            this.descripciongas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descripciongas.HeaderText = "Descripción";
-            this.descripciongas.Name = "descripciongas";
-            this.descripciongas.ReadOnly = true;
-            // 
-            // preciogas
-            // 
-            this.preciogas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.preciogas.DefaultCellStyle = dataGridViewCellStyle8;
-            this.preciogas.HeaderText = "Costo Unitario";
-            this.preciogas.Name = "preciogas";
-            this.preciogas.ReadOnly = true;
-            this.preciogas.Width = 98;
-            // 
-            // importegas
-            // 
-            this.importegas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.importegas.DefaultCellStyle = dataGridViewCellStyle9;
-            this.importegas.HeaderText = "Importe";
-            this.importegas.Name = "importegas";
-            this.importegas.ReadOnly = true;
-            this.importegas.Width = 67;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.textBoxCapacidad);
-            this.groupBox8.Controls.Add(this.label8);
-            this.groupBox8.Controls.Add(this.buttonEliminarGas);
-            this.groupBox8.Controls.Add(this.textBoxCantidadGas);
-            this.groupBox8.Controls.Add(this.buttonAgregarGas);
-            this.groupBox8.Controls.Add(this.textBoxTipoGas);
-            this.groupBox8.Controls.Add(this.buttonBuscarGas);
-            this.groupBox8.Controls.Add(this.label1);
-            this.groupBox8.Controls.Add(this.label2);
-            this.groupBox8.Location = new System.Drawing.Point(18, 12);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(620, 95);
-            this.groupBox8.TabIndex = 0;
-            this.groupBox8.TabStop = false;
-            // 
-            // textBoxCapacidad
-            // 
-            this.textBoxCapacidad.Location = new System.Drawing.Point(189, 60);
-            this.textBoxCapacidad.Name = "textBoxCapacidad";
-            this.textBoxCapacidad.ReadOnly = true;
-            this.textBoxCapacidad.Size = new System.Drawing.Size(135, 20);
-            this.textBoxCapacidad.TabIndex = 16;
-            this.textBoxCapacidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(27, 64);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(163, 13);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Capacidad Máxima del Vehículo:";
-            // 
-            // buttonEliminarGas
-            // 
-            this.buttonEliminarGas.Image = global::SistemaGestionTaller.Properties.Resources.eliminar;
-            this.buttonEliminarGas.Location = new System.Drawing.Point(571, 12);
-            this.buttonEliminarGas.Name = "buttonEliminarGas";
-            this.buttonEliminarGas.Size = new System.Drawing.Size(40, 40);
-            this.buttonEliminarGas.TabIndex = 12;
-            this.buttonEliminarGas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonEliminarGas.UseVisualStyleBackColor = true;
-            this.buttonEliminarGas.Click += new System.EventHandler(this.buttonEliminarGas_Click);
-            // 
-            // textBoxCantidadGas
-            // 
-            this.textBoxCantidadGas.Location = new System.Drawing.Point(469, 22);
-            this.textBoxCantidadGas.Name = "textBoxCantidadGas";
-            this.textBoxCantidadGas.Size = new System.Drawing.Size(38, 20);
-            this.textBoxCantidadGas.TabIndex = 10;
-            this.textBoxCantidadGas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxCantidadGas.TextChanged += new System.EventHandler(this.textBoxCantidadGas_TextChanged);
-            // 
-            // buttonAgregarGas
-            // 
-            this.buttonAgregarGas.Image = global::SistemaGestionTaller.Properties.Resources.agregar;
-            this.buttonAgregarGas.Location = new System.Drawing.Point(525, 12);
-            this.buttonAgregarGas.Name = "buttonAgregarGas";
-            this.buttonAgregarGas.Size = new System.Drawing.Size(40, 40);
-            this.buttonAgregarGas.TabIndex = 11;
-            this.buttonAgregarGas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttonAgregarGas.UseVisualStyleBackColor = true;
-            this.buttonAgregarGas.Click += new System.EventHandler(this.buttonAgregarGas_Click);
-            // 
-            // textBoxTipoGas
-            // 
-            this.textBoxTipoGas.Location = new System.Drawing.Point(62, 22);
-            this.textBoxTipoGas.Name = "textBoxTipoGas";
-            this.textBoxTipoGas.ReadOnly = true;
-            this.textBoxTipoGas.Size = new System.Drawing.Size(262, 20);
-            this.textBoxTipoGas.TabIndex = 6;
-            // 
-            // buttonBuscarGas
-            // 
-            this.buttonBuscarGas.Location = new System.Drawing.Point(332, 21);
-            this.buttonBuscarGas.Name = "buttonBuscarGas";
-            this.buttonBuscarGas.Size = new System.Drawing.Size(27, 23);
-            this.buttonBuscarGas.TabIndex = 7;
-            this.buttonBuscarGas.Text = "...";
-            this.buttonBuscarGas.UseVisualStyleBackColor = true;
-            this.buttonBuscarGas.Click += new System.EventHandler(this.buttonBuscarGas_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(399, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Cantidad(gr.):";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Gas:";
             // 
             // textTotal
             // 
@@ -926,6 +714,192 @@
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Location = new System.Drawing.Point(18, 12);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(620, 95);
+            this.groupBox8.TabIndex = 0;
+            this.groupBox8.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(399, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 13);
+            this.label1.TabIndex = 8;
+            // 
+            // buttonBuscarGas
+            // 
+            this.buttonBuscarGas.Location = new System.Drawing.Point(332, 21);
+            this.buttonBuscarGas.Name = "buttonBuscarGas";
+            this.buttonBuscarGas.Size = new System.Drawing.Size(27, 23);
+            this.buttonBuscarGas.TabIndex = 7;
+            this.buttonBuscarGas.Text = "...";
+            this.buttonBuscarGas.UseVisualStyleBackColor = true;
+            this.buttonBuscarGas.Click += new System.EventHandler(this.buttonBuscarGas_Click);
+            // 
+            // textBoxTipoGas
+            // 
+            this.textBoxTipoGas.Location = new System.Drawing.Point(62, 22);
+            this.textBoxTipoGas.Name = "textBoxTipoGas";
+            this.textBoxTipoGas.ReadOnly = true;
+            this.textBoxTipoGas.Size = new System.Drawing.Size(262, 20);
+            this.textBoxTipoGas.TabIndex = 6;
+            // 
+            // buttonAgregarGas
+            // 
+            this.buttonAgregarGas.Image = global::SistemaGestionTaller.Properties.Resources.agregar;
+            this.buttonAgregarGas.Location = new System.Drawing.Point(525, 12);
+            this.buttonAgregarGas.Name = "buttonAgregarGas";
+            this.buttonAgregarGas.Size = new System.Drawing.Size(40, 40);
+            this.buttonAgregarGas.TabIndex = 11;
+            this.buttonAgregarGas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonAgregarGas.UseVisualStyleBackColor = true;
+            this.buttonAgregarGas.Click += new System.EventHandler(this.buttonAgregarGas_Click);
+            // 
+            // textBoxCantidadGas
+            // 
+            this.textBoxCantidadGas.Location = new System.Drawing.Point(469, 22);
+            this.textBoxCantidadGas.Name = "textBoxCantidadGas";
+            this.textBoxCantidadGas.Size = new System.Drawing.Size(38, 20);
+            this.textBoxCantidadGas.TabIndex = 10;
+            this.textBoxCantidadGas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBoxCantidadGas.TextChanged += new System.EventHandler(this.textBoxCantidadGas_TextChanged);
+            // 
+            // buttonEliminarGas
+            // 
+            this.buttonEliminarGas.Image = global::SistemaGestionTaller.Properties.Resources.eliminar;
+            this.buttonEliminarGas.Location = new System.Drawing.Point(571, 12);
+            this.buttonEliminarGas.Name = "buttonEliminarGas";
+            this.buttonEliminarGas.Size = new System.Drawing.Size(40, 40);
+            this.buttonEliminarGas.TabIndex = 12;
+            this.buttonEliminarGas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buttonEliminarGas.UseVisualStyleBackColor = true;
+            this.buttonEliminarGas.Click += new System.EventHandler(this.buttonEliminarGas_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(27, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(163, 13);
+            this.label8.TabIndex = 15;
+            // 
+            // textBoxCapacidad
+            // 
+            this.textBoxCapacidad.Location = new System.Drawing.Point(189, 60);
+            this.textBoxCapacidad.Name = "textBoxCapacidad";
+            this.textBoxCapacidad.ReadOnly = true;
+            this.textBoxCapacidad.Size = new System.Drawing.Size(135, 20);
+            this.textBoxCapacidad.TabIndex = 16;
+            this.textBoxCapacidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dataGridGas
+            // 
+            this.dataGridGas.AllowUserToAddRows = false;
+            this.dataGridGas.AllowUserToDeleteRows = false;
+            this.dataGridGas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridGas.Location = new System.Drawing.Point(19, 118);
+            this.dataGridGas.MultiSelect = false;
+            this.dataGridGas.Name = "dataGridGas";
+            this.dataGridGas.ReadOnly = true;
+            this.dataGridGas.RowHeadersVisible = false;
+            this.dataGridGas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridGas.Size = new System.Drawing.Size(619, 153);
+            this.dataGridGas.TabIndex = 18;
+            this.dataGridGas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridGas_CellClick);
+            // 
+            // importegas
+            // 
+            this.importegas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.importegas.DefaultCellStyle = dataGridViewCellStyle13;
+            this.importegas.HeaderText = "Importe";
+            this.importegas.Name = "importegas";
+            this.importegas.ReadOnly = true;
+            // 
+            // preciogas
+            // 
+            this.preciogas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Format = "C2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.preciogas.DefaultCellStyle = dataGridViewCellStyle14;
+            this.preciogas.HeaderText = "Costo Unitario";
+            this.preciogas.Name = "preciogas";
+            this.preciogas.ReadOnly = true;
+            // 
+            // descripciongas
+            // 
+            this.descripciongas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descripciongas.HeaderText = "Descripción";
+            this.descripciongas.Name = "descripciongas";
+            this.descripciongas.ReadOnly = true;
+            // 
+            // codigogas
+            // 
+            this.codigogas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.codigogas.HeaderText = "Código";
+            this.codigogas.Name = "codigogas";
+            this.codigogas.ReadOnly = true;
+            this.codigogas.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // cantidadgas
+            // 
+            this.cantidadgas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cantidadgas.HeaderText = "Cantidad";
+            this.cantidadgas.Name = "cantidadgas";
+            this.cantidadgas.ReadOnly = true;
+            // 
+            // marcagas
+            // 
+            this.marcagas.HeaderText = "Marca";
+            this.marcagas.Name = "marcagas";
+            this.marcagas.ReadOnly = true;
+            this.marcagas.Visible = false;
+            // 
+            // modelogas
+            // 
+            this.modelogas.HeaderText = "Modelo";
+            this.modelogas.Name = "modelogas";
+            this.modelogas.ReadOnly = true;
+            this.modelogas.Visible = false;
+            // 
+            // idgas
+            // 
+            dataGridViewCellStyle15.NullValue = "0";
+            this.idgas.DefaultCellStyle = dataGridViewCellStyle15;
+            this.idgas.HeaderText = "ID";
+            this.idgas.Name = "idgas";
+            this.idgas.ReadOnly = true;
+            this.idgas.Visible = false;
+            // 
+            // tabGas
+            // 
+            this.tabGas.Controls.Add(this.dataGridGas);
+            this.tabGas.Controls.Add(this.groupBox8);
+            this.tabGas.Location = new System.Drawing.Point(4, 22);
+            this.tabGas.Name = "tabGas";
+            this.tabGas.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGas.Size = new System.Drawing.Size(654, 285);
+            this.tabGas.TabIndex = 2;
+            this.tabGas.Text = "Carga de Gas";
+            this.tabGas.UseVisualStyleBackColor = true;
+            // 
             // frmAgregarEditarGarantia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,14 +936,12 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalle)).EndInit();
-            this.tabGas.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridGas)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridGas)).EndInit();
+            this.tabGas.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1010,16 +982,6 @@
         private System.Windows.Forms.Button buttonBuscarRepuesto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TabPage tabGas;
-        private System.Windows.Forms.DataGridView dataGridGas;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button buttonEliminarGas;
-        private System.Windows.Forms.TextBox textBoxCantidadGas;
-        private System.Windows.Forms.Button buttonAgregarGas;
-        private System.Windows.Forms.TextBox textBoxTipoGas;
-        private System.Windows.Forms.Button buttonBuscarGas;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.TextBox textTotal;
         private System.Windows.Forms.Label label5;
@@ -1034,16 +996,6 @@
         private System.Windows.Forms.Button buttonNuevoCliente;
         private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Button buttonBuscarCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idgas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelogas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marcagas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadgas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigogas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripciongas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preciogas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importegas;
-        private System.Windows.Forms.TextBox textBoxCapacidad;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridRepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn idrepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn marca;
@@ -1053,5 +1005,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionrepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn preciorepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn importerepuesto;
+        private System.Windows.Forms.TabPage tabGas;
+        private System.Windows.Forms.DataGridView dataGridGas;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonBuscarGas;
+        private System.Windows.Forms.TextBox textBoxTipoGas;
+        private System.Windows.Forms.Button buttonAgregarGas;
+        private System.Windows.Forms.TextBox textBoxCantidadGas;
+        private System.Windows.Forms.Button buttonEliminarGas;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxCapacidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importegas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preciogas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripciongas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigogas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadgas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcagas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelogas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgas;
     }
 }
