@@ -46,25 +46,31 @@ namespace SistemaGestionTaller
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            int r = this.dataGridReparacion.CurrentCell.RowIndex;
+            try{
 
-            if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 0)
-            {
-                flagPresupuesto = true;
-                frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value), flagPresupuesto);
-                faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
-                faer.MdiParent = this.MdiParent;
-                faer.Show();
+                int r = this.dataGridReparacion.CurrentCell.RowIndex;
+
+                if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 0)
+                {
+                    flagPresupuesto = true;
+                    frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value), flagPresupuesto);
+                    faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
+                    faer.MdiParent = this.MdiParent;
+                    faer.Show();
+                }
+                else if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 1)
+                {
+                    flagPresupuesto = false;
+                    frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value), flagPresupuesto);
+                    faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
+                    faer.MdiParent = this.MdiParent;
+                    faer.Show();
+                }
             }
-            else if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 1)
+            catch
             {
-                flagPresupuesto = false;
-                frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value), flagPresupuesto);
-                faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
-                faer.MdiParent = this.MdiParent;
-                faer.Show();
+                return;
             }
-            
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

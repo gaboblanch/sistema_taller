@@ -29,12 +29,18 @@ namespace SistemaGestionTaller
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            int r = dataGridProveedor.CurrentCell.RowIndex;
+            try{
 
-            frmAgregarEditarProveedor faep = new frmAgregarEditarProveedor(Convert.ToInt32(dataGridProveedor.Rows[r].Cells["idproveedor"].Value));
-            faep.actualizarDataGridEvento += new frmAgregarEditarProveedor.actualizarDataGrid(llenarDataGrid);
-            faep.MdiParent = this.MdiParent;
-            faep.Show();
+                int r = dataGridProveedor.CurrentCell.RowIndex;
+
+                frmAgregarEditarProveedor faep = new frmAgregarEditarProveedor(Convert.ToInt32(dataGridProveedor.Rows[r].Cells["idproveedor"].Value));
+                faep.actualizarDataGridEvento += new frmAgregarEditarProveedor.actualizarDataGrid(llenarDataGrid);
+                faep.MdiParent = this.MdiParent;
+                faep.Show();
+            }
+            catch{
+                return;
+            }
         }
 
         private void llenarDataGrid()
@@ -86,6 +92,7 @@ namespace SistemaGestionTaller
 
                 proveedor.Id = Convert.ToInt32(dataGridProveedor.Rows[r].Cells["idproveedor"].Value);
                 proveedor.eliminar();
+                llenarDataGrid();
             }
         }
 

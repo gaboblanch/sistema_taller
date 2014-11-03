@@ -129,12 +129,19 @@ namespace SistemaGestionTaller
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            int r = dataGridCliente.CurrentCell.RowIndex;
+            try
+            {
+                int r = dataGridCliente.CurrentCell.RowIndex;
 
-            frmAgregarEditarCliente faec = new frmAgregarEditarCliente(Convert.ToInt32(dataGridCliente.Rows[r].Cells["idcliente"].Value));
-            faec.actualizarDataGridEvento += new frmAgregarEditarCliente.actualizarDataGrid(llenarDataGrid);
-            faec.MdiParent = this.MdiParent;
-            faec.Show();
+                frmAgregarEditarCliente faec = new frmAgregarEditarCliente(Convert.ToInt32(dataGridCliente.Rows[r].Cells["idcliente"].Value));
+                faec.actualizarDataGridEvento += new frmAgregarEditarCliente.actualizarDataGrid(llenarDataGrid);
+                faec.MdiParent = this.MdiParent;
+                faec.Show();
+            }
+            catch{
+                return;
+            }
+            
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

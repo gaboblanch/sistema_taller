@@ -36,13 +36,20 @@ namespace SistemaGestionTaller
         //TERMINA CODIGO DE PRUEBA
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            flagDataGrid = true;
-            int r = dataGridRepuesto.CurrentCell.RowIndex;
+            try
+            {
+                flagDataGrid = true;
+                int r = dataGridRepuesto.CurrentCell.RowIndex;
 
-            frmAgregarEditarRepuestoUnico faer = new frmAgregarEditarRepuestoUnico(Convert.ToInt32(dataGridRepuesto.Rows[r].Cells["idRepuesto"].Value));
-            faer.actualizarDataGridEvento += new frmAgregarEditarRepuestoUnico.actualizarDataGrid(llenarDataGrid);
-            faer.MdiParent = this.MdiParent;
-            faer.Show();
+                frmAgregarEditarRepuestoUnico faer = new frmAgregarEditarRepuestoUnico(Convert.ToInt32(dataGridRepuesto.Rows[r].Cells["idRepuesto"].Value));
+                faer.actualizarDataGridEvento += new frmAgregarEditarRepuestoUnico.actualizarDataGrid(llenarDataGrid);
+                faer.MdiParent = this.MdiParent;
+                faer.Show();
+            }
+            catch
+            {
+                return;
+            }
         }
 
         private void frmGestiónRepuesto_Load(object sender, EventArgs e)

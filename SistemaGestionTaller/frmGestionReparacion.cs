@@ -220,35 +220,40 @@ namespace SistemaGestionTaller
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-            int r = this.dataGridReparacion.CurrentCell.RowIndex;
+            try{
+                int r = this.dataGridReparacion.CurrentCell.RowIndex;
 
-            if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 1)
-            {
-                flagPresupuesto = false;
-                frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value), flagPresupuesto);
-                faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
-                faer.MdiParent = this.MdiParent;
-                faer.Show();
-            }
-            else if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 2)
-            {
-                //SE EDITA LA FACTURA
-                this.buttonEditar.Enabled = false;
-                this.buttonEliminar.Enabled = false;
+                if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 1)
+                {
+                    flagPresupuesto = false;
+                    frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value), flagPresupuesto);
+                    faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
+                    faer.MdiParent = this.MdiParent;
+                    faer.Show();
+                }
+                else if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 2)
+                {
+                    //SE EDITA LA FACTURA
+                    this.buttonEditar.Enabled = false;
+                    this.buttonEliminar.Enabled = false;
 
-                frmFactura ff = new frmFactura(Convert.ToInt32(this.dataGridReparacion.Rows[r].Cells["idreparacion"].Value), false);
-                ff.MdiParent = this.MdiParent;
-                ff.Show();
-            }
-            else if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 6)
-            {
-                flagPresupuesto = false;
-                frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value));
-                faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
-                faer.MdiParent = this.MdiParent;
-                faer.Show();
-            }
+                    frmFactura ff = new frmFactura(Convert.ToInt32(this.dataGridReparacion.Rows[r].Cells["idreparacion"].Value), false);
+                    ff.MdiParent = this.MdiParent;
+                    ff.Show();
+                }
+                else if (Convert.ToInt32(dataGridReparacion.Rows[r].Cells["estado"].Value) == 6)
+                {
+                    flagPresupuesto = false;
+                    frmAgregarEditarReparacion faer = new frmAgregarEditarReparacion(Convert.ToInt32(dataGridReparacion.Rows[r].Cells["idreparacion"].Value));
+                    faer.actualizarDataGridEvento += new frmAgregarEditarReparacion.actualizarDataGrid(llenarDataGrid);
+                    faer.MdiParent = this.MdiParent;
+                    faer.Show();
+                }
             
+            }
+            catch{
+                return;
+            }
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

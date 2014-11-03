@@ -248,7 +248,15 @@ namespace SistemaGestionTaller
                 //int i = (cliente.NombreRazonSocial.Length - 1) - (cliente.NombreRazonSocial.IndexOf(",") + 1);
 
                 //COLOCAMOS LOS DATOS EN LOS CAMPOS DEL FORMULARIO
-                textCuit.Text = cliente.Dni;
+                if (cliente.Cuit == "")
+                {
+                    textCuit.Text = cliente.Dni;
+                }
+                else
+                {
+                    textCuit.Text = cliente.Cuit;
+                }
+                
                 textNombre.Text = cliente.NombreRazonSocial;
                 //textNombre.Text = cliente.NombreRazonSocial.Substring((cliente.NombreRazonSocial.IndexOf(",") + 2), i);
                 //textApellido.Text = cliente.NombreRazonSocial.Substring(0, cliente.NombreRazonSocial.IndexOf(","));
@@ -257,7 +265,6 @@ namespace SistemaGestionTaller
                 comboBoxProvincia.Text = cliente.Provincia.ToUpper();
                 comboBoxLocalidad.Text = cliente.Localidad.ToUpper();
                 textObservaciones.Text = cliente.Observaciones.ToUpper();
-                textCuit.Text = cliente.Cuit;
                 textEmail.Text = cliente.Email;
                 textCp.Text = cliente.Cp;
 
