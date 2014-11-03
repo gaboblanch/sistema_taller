@@ -275,5 +275,10 @@ namespace SistemaGestionTaller
             ficd.Show();
         }
 
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

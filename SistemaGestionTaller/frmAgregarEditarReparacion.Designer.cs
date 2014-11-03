@@ -347,7 +347,8 @@
             this.groupBox2.Size = new System.Drawing.Size(328, 81);
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Vehículo";
+            this.groupBox2.Text = "Datos del mobil";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // buttonEditarVehiculo
             // 
@@ -399,20 +400,21 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 56);
+            this.label4.Location = new System.Drawing.Point(57, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
+            this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Marca, Modelo:";
+            this.label4.Text = "Marca:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(57, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Dominio:";
+            this.label3.Text = "Modelo:";
             // 
             // groupBox1
             // 
@@ -739,6 +741,8 @@
             // 
             // tabGas
             // 
+            this.tabGas.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.tabGas.CausesValidation = false;
             this.tabGas.Controls.Add(this.dataGridGas);
             this.tabGas.Controls.Add(this.groupBox8);
             this.tabGas.Location = new System.Drawing.Point(4, 22);
@@ -747,7 +751,6 @@
             this.tabGas.Size = new System.Drawing.Size(654, 285);
             this.tabGas.TabIndex = 2;
             this.tabGas.Text = "Carga de Gas";
-            this.tabGas.UseVisualStyleBackColor = true;
             // 
             // dataGridGas
             // 
@@ -1038,9 +1041,9 @@
             // 
             // labelCodigoReparacion
             // 
-            this.labelCodigoReparacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelCodigoReparacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCodigoReparacion.AutoSize = true;
             this.labelCodigoReparacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCodigoReparacion.Location = new System.Drawing.Point(60, 16);

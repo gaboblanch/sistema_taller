@@ -1503,6 +1503,16 @@ namespace SistemaGestionTaller
                 MessageBox.Show("Debe seleccionar un cliente a editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         } 
 
     }

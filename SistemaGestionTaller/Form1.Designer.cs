@@ -40,7 +40,6 @@
             this.baseDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.privilegiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -101,7 +100,6 @@
             this.baseDeDatosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.privilegiosToolStripMenuItem,
-            this.toolStripSeparator2,
             this.cerrarSesiónToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.sistemaToolStripMenuItem.Name = "sistemaToolStripMenuItem";
@@ -132,6 +130,7 @@
             this.tipoDeGasToolStripMenuItem.Name = "tipoDeGasToolStripMenuItem";
             this.tipoDeGasToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.tipoDeGasToolStripMenuItem.Text = "Tipos de Gas";
+            this.tipoDeGasToolStripMenuItem.Visible = false;
             this.tipoDeGasToolStripMenuItem.Click += new System.EventHandler(this.tipoDeGasToolStripMenuItem_Click_1);
             // 
             // tiposDeCuentasBancoToolStripMenuItem
@@ -153,6 +152,7 @@
             this.condicionIVAToolStripMenuItem.Name = "condicionIVAToolStripMenuItem";
             this.condicionIVAToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.condicionIVAToolStripMenuItem.Text = "Condicion IVA";
+            this.condicionIVAToolStripMenuItem.Visible = false;
             this.condicionIVAToolStripMenuItem.Click += new System.EventHandler(this.condicionIVAToolStripMenuItem_Click);
             // 
             // toolStripSeparator4
@@ -174,6 +174,8 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.ToolTipText = "Agregar, Editar o Eliminar todos los usuarios.";
+            this.usuariosToolStripMenuItem.Visible = false;
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // privilegiosToolStripMenuItem
             // 
@@ -182,17 +184,14 @@
             this.privilegiosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.privilegiosToolStripMenuItem.Text = "Privilegios";
             this.privilegiosToolStripMenuItem.ToolTipText = "Establecer los permisos de los tipos de usuarios.";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(147, 6);
+            this.privilegiosToolStripMenuItem.Visible = false;
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
             this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem.Visible = false;
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
@@ -332,21 +331,21 @@
             // presupuestosToolStripMenuItem
             // 
             this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
-            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
             this.presupuestosToolStripMenuItem.Click += new System.EventHandler(this.presupuestosToolStripMenuItem_Click);
             // 
             // reparacionToolStripMenuItem
             // 
             this.reparacionToolStripMenuItem.Name = "reparacionToolStripMenuItem";
-            this.reparacionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reparacionToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.reparacionToolStripMenuItem.Text = "Reparacion";
             this.reparacionToolStripMenuItem.Click += new System.EventHandler(this.reparacionToolStripMenuItem_Click);
             // 
             // repuestosToolStripMenuItem1
             // 
             this.repuestosToolStripMenuItem1.Name = "repuestosToolStripMenuItem1";
-            this.repuestosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.repuestosToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
             this.repuestosToolStripMenuItem1.Text = "Repuestos";
             this.repuestosToolStripMenuItem1.Click += new System.EventHandler(this.repuestosToolStripMenuItem1_Click);
             // 
@@ -469,7 +468,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Sistema de Gestión de Taller";
+            this.Text = "MegaStart Comunicaciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -486,7 +485,6 @@
         private System.Windows.Forms.ToolStripMenuItem baseDeDatosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem privilegiosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestiónToolStripMenuItem;
