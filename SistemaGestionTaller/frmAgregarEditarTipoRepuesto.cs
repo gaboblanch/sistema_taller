@@ -64,5 +64,13 @@ namespace SistemaGestionTaller
         {
             this.Dispose();
         }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.buttonGuardar.PerformClick();
+            }
+        }
     }
 }

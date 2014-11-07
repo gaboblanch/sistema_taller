@@ -92,7 +92,7 @@
             this.comboBoxLocalidad.Location = new System.Drawing.Point(429, 108);
             this.comboBoxLocalidad.Name = "comboBoxLocalidad";
             this.comboBoxLocalidad.Size = new System.Drawing.Size(186, 21);
-            this.comboBoxLocalidad.TabIndex = 21;
+            this.comboBoxLocalidad.TabIndex = 8;
             // 
             // label10
             // 
@@ -108,7 +108,7 @@
             this.textEmail.Location = new System.Drawing.Point(138, 79);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(186, 20);
-            this.textEmail.TabIndex = 4;
+            this.textEmail.TabIndex = 3;
             this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // label9
@@ -125,7 +125,7 @@
             this.textCp.Location = new System.Drawing.Point(428, 21);
             this.textCp.Name = "textCp";
             this.textCp.Size = new System.Drawing.Size(186, 20);
-            this.textCp.TabIndex = 7;
+            this.textCp.TabIndex = 5;
             this.textCp.TextChanged += new System.EventHandler(this.textCp_TextChanged);
             // 
             // textCuit
@@ -133,7 +133,7 @@
             this.textCuit.Location = new System.Drawing.Point(138, 21);
             this.textCuit.Name = "textCuit";
             this.textCuit.Size = new System.Drawing.Size(186, 20);
-            this.textCuit.TabIndex = 6;
+            this.textCuit.TabIndex = 1;
             this.textCuit.TextChanged += new System.EventHandler(this.textCuit_TextChanged);
             // 
             // textTelefono
@@ -141,7 +141,7 @@
             this.textTelefono.Location = new System.Drawing.Point(138, 108);
             this.textTelefono.Name = "textTelefono";
             this.textTelefono.Size = new System.Drawing.Size(186, 20);
-            this.textTelefono.TabIndex = 5;
+            this.textTelefono.TabIndex = 4;
             this.textTelefono.TextChanged += new System.EventHandler(this.textTelefono_TextChanged);
             // 
             // textNombre
@@ -157,7 +157,7 @@
             this.textDireccion.Location = new System.Drawing.Point(428, 50);
             this.textDireccion.Name = "textDireccion";
             this.textDireccion.Size = new System.Drawing.Size(186, 20);
-            this.textDireccion.TabIndex = 8;
+            this.textDireccion.TabIndex = 6;
             this.textDireccion.TextChanged += new System.EventHandler(this.textDireccion_TextChanged);
             // 
             // comboBoxProvincia
@@ -170,7 +170,7 @@
             this.comboBoxProvincia.Location = new System.Drawing.Point(429, 79);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(186, 21);
-            this.comboBoxProvincia.TabIndex = 10;
+            this.comboBoxProvincia.TabIndex = 7;
             this.comboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvincia_SelectedIndexChanged);
             // 
             // label7
@@ -232,7 +232,7 @@
             this.textObservaciones.Location = new System.Drawing.Point(19, 19);
             this.textObservaciones.Name = "textObservaciones";
             this.textObservaciones.Size = new System.Drawing.Size(575, 53);
-            this.textObservaciones.TabIndex = 11;
+            this.textObservaciones.TabIndex = 9;
             this.textObservaciones.Text = "";
             this.textObservaciones.TextChanged += new System.EventHandler(this.textObservaciones_TextChanged);
             // 
@@ -296,7 +296,7 @@
             this.buttonGuardar.Location = new System.Drawing.Point(530, 253);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(102, 54);
-            this.buttonGuardar.TabIndex = 12;
+            this.buttonGuardar.TabIndex = 10;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGuardar.UseVisualStyleBackColor = true;
@@ -328,6 +328,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmAgregarEditarCliente_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.frmAgregarEditarCliente_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

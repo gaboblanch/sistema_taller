@@ -1505,14 +1505,27 @@ namespace SistemaGestionTaller
             }
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void dataGridRepuesto_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter)
+            {
+                int column = dataGridRepuesto.CurrentCell.ColumnIndex;
+                int row = dataGridRepuesto.CurrentCell.RowIndex;
+                if (column < dataGridRepuesto.ColumnCount)
+                {
+                    switch (column)
+                    {
+                        case 3:
+                            this.dataGridRepuesto.CurrentCell = this.dataGridRepuesto["preciorepuesto", row];
+                            break;
+                        default:
+                            this.dataGridRepuesto.CurrentCell = this.dataGridRepuesto["cantidadrepuesto", row];
+                            break;
+                    }
 
-        }
+                }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
+            }
         } 
 
     }

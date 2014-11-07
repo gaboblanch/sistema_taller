@@ -69,6 +69,14 @@ namespace SistemaGestionTaller
             this.Close();
         }
 
+        private void textBoxDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.buttonGuardar.PerformClick();
+            }
+        }
+
 
     }
 }

@@ -481,7 +481,13 @@ namespace SistemaGestionTaller
             faev.Show();
         }
 
-        
+        private void frmAgregarEditarCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                this.buttonGuardar.PerformClick();
+            }
+        }     
 
     }
 }

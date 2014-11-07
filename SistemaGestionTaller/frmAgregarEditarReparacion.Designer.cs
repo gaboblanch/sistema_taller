@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridDetalle = new System.Windows.Forms.DataGridView();
@@ -203,8 +203,8 @@
             // cantidad
             // 
             this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle13.NullValue = "0";
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.NullValue = "0";
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle1;
             this.cantidad.HeaderText = "Cantidad";
             this.cantidad.Name = "cantidad";
             this.cantidad.Visible = false;
@@ -212,8 +212,8 @@
             // tiempo
             // 
             this.tiempo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle14.NullValue = "0";
-            this.tiempo.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.NullValue = "0";
+            this.tiempo.DefaultCellStyle = dataGridViewCellStyle2;
             this.tiempo.HeaderText = "Tiempo";
             this.tiempo.Name = "tiempo";
             this.tiempo.Visible = false;
@@ -221,20 +221,20 @@
             // preciotarea
             // 
             this.preciotarea.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.Format = "C2";
-            this.preciotarea.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Format = "C2";
+            this.preciotarea.DefaultCellStyle = dataGridViewCellStyle3;
             this.preciotarea.HeaderText = "Importe";
             this.preciotarea.Name = "preciotarea";
             this.preciotarea.Width = 67;
             // 
             // flagmanual
             // 
-            dataGridViewCellStyle16.Format = "N0";
-            dataGridViewCellStyle16.NullValue = "0";
-            this.flagmanual.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "0";
+            this.flagmanual.DefaultCellStyle = dataGridViewCellStyle4;
             this.flagmanual.HeaderText = "FlagManual";
             this.flagmanual.Name = "flagmanual";
             this.flagmanual.Visible = false;
@@ -627,12 +627,13 @@
             this.dataGridRepuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellClick);
             this.dataGridRepuesto.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellEndEdit);
             this.dataGridRepuesto.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridRepuesto_EditingControlShowing);
+            this.dataGridRepuesto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridRepuesto_KeyDown);
             this.dataGridRepuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridRepuesto_KeyPress);
             // 
             // idrepuesto
             // 
-            dataGridViewCellStyle17.NullValue = "0";
-            this.idrepuesto.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.NullValue = "0";
+            this.idrepuesto.DefaultCellStyle = dataGridViewCellStyle5;
             this.idrepuesto.HeaderText = "ID";
             this.idrepuesto.Name = "idrepuesto";
             this.idrepuesto.ReadOnly = true;
@@ -653,8 +654,8 @@
             // cantidadrepuesto
             // 
             this.cantidadrepuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle18.NullValue = null;
-            this.cantidadrepuesto.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.NullValue = null;
+            this.cantidadrepuesto.DefaultCellStyle = dataGridViewCellStyle6;
             this.cantidadrepuesto.HeaderText = "Cantidad";
             this.cantidadrepuesto.Name = "cantidadrepuesto";
             this.cantidadrepuesto.Width = 74;
@@ -676,10 +677,10 @@
             // preciorepuesto
             // 
             this.preciorepuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.Format = "C2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.preciorepuesto.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.preciorepuesto.DefaultCellStyle = dataGridViewCellStyle7;
             this.preciorepuesto.HeaderText = "Precio Unitario";
             this.preciorepuesto.Name = "preciorepuesto";
             this.preciorepuesto.Width = 101;
@@ -687,12 +688,12 @@
             // importerepuesto
             // 
             this.importerepuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.Format = "C2";
-            dataGridViewCellStyle20.NullValue = null;
-            this.importerepuesto.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.importerepuesto.DefaultCellStyle = dataGridViewCellStyle8;
             this.importerepuesto.HeaderText = "Importe";
             this.importerepuesto.Name = "importerepuesto";
             this.importerepuesto.ReadOnly = true;
@@ -700,9 +701,9 @@
             // 
             // flagGenerico
             // 
-            dataGridViewCellStyle21.Format = "N0";
-            dataGridViewCellStyle21.NullValue = null;
-            this.flagGenerico.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.flagGenerico.DefaultCellStyle = dataGridViewCellStyle9;
             this.flagGenerico.HeaderText = "FlagGenerico";
             this.flagGenerico.Name = "flagGenerico";
             this.flagGenerico.Visible = false;
@@ -778,8 +779,8 @@
             // 
             // idgas
             // 
-            dataGridViewCellStyle22.NullValue = "0";
-            this.idgas.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle10.NullValue = "0";
+            this.idgas.DefaultCellStyle = dataGridViewCellStyle10;
             this.idgas.HeaderText = "ID";
             this.idgas.Name = "idgas";
             this.idgas.ReadOnly = true;
@@ -826,10 +827,10 @@
             // preciogas
             // 
             this.preciogas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Format = "C2";
-            dataGridViewCellStyle23.NullValue = null;
-            this.preciogas.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.preciogas.DefaultCellStyle = dataGridViewCellStyle11;
             this.preciogas.HeaderText = "Precio Unitario";
             this.preciogas.Name = "preciogas";
             this.preciogas.ReadOnly = true;
@@ -838,12 +839,12 @@
             // importegas
             // 
             this.importegas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.Format = "C2";
-            dataGridViewCellStyle24.NullValue = null;
-            this.importegas.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.importegas.DefaultCellStyle = dataGridViewCellStyle12;
             this.importegas.HeaderText = "Importe";
             this.importegas.Name = "importegas";
             this.importegas.ReadOnly = true;

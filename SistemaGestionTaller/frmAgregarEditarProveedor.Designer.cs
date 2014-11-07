@@ -69,7 +69,7 @@
             this.textObservaciones.Location = new System.Drawing.Point(6, 19);
             this.textObservaciones.Name = "textObservaciones";
             this.textObservaciones.Size = new System.Drawing.Size(682, 75);
-            this.textObservaciones.TabIndex = 0;
+            this.textObservaciones.TabIndex = 13;
             this.textObservaciones.Text = "";
             this.textObservaciones.TextChanged += new System.EventHandler(this.textObservaciones_TextChanged);
             // 
@@ -109,7 +109,7 @@
             this.comboBoxLocalidad.Location = new System.Drawing.Point(404, 131);
             this.comboBoxLocalidad.Name = "comboBoxLocalidad";
             this.comboBoxLocalidad.Size = new System.Drawing.Size(259, 21);
-            this.comboBoxLocalidad.TabIndex = 41;
+            this.comboBoxLocalidad.TabIndex = 8;
             // 
             // label14
             // 
@@ -125,7 +125,7 @@
             this.textPagina.Location = new System.Drawing.Point(131, 103);
             this.textPagina.Name = "textPagina";
             this.textPagina.Size = new System.Drawing.Size(173, 20);
-            this.textPagina.TabIndex = 39;
+            this.textPagina.TabIndex = 3;
             // 
             // label10
             // 
@@ -141,7 +141,7 @@
             this.textEmail.Location = new System.Drawing.Point(131, 75);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(173, 20);
-            this.textEmail.TabIndex = 3;
+            this.textEmail.TabIndex = 2;
             this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // textTelefono
@@ -157,7 +157,7 @@
             this.textApellido.Location = new System.Drawing.Point(131, 47);
             this.textApellido.Name = "textApellido";
             this.textApellido.Size = new System.Drawing.Size(173, 20);
-            this.textApellido.TabIndex = 2;
+            this.textApellido.TabIndex = 1;
             this.textApellido.TextChanged += new System.EventHandler(this.textApellido_TextChanged);
             // 
             // label11
@@ -229,7 +229,7 @@
             this.comboBoxProvincia.Location = new System.Drawing.Point(404, 103);
             this.comboBoxProvincia.Name = "comboBoxProvincia";
             this.comboBoxProvincia.Size = new System.Drawing.Size(259, 21);
-            this.comboBoxProvincia.TabIndex = 8;
+            this.comboBoxProvincia.TabIndex = 7;
             this.comboBoxProvincia.SelectedIndexChanged += new System.EventHandler(this.comboBoxProvincia_SelectedIndexChanged);
             // 
             // label7
@@ -276,7 +276,7 @@
             this.buttonGuardar.Location = new System.Drawing.Point(601, 420);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(102, 54);
-            this.buttonGuardar.TabIndex = 0;
+            this.buttonGuardar.TabIndex = 14;
             this.buttonGuardar.Text = "Guardar";
             this.buttonGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttonGuardar.UseVisualStyleBackColor = true;
@@ -313,7 +313,7 @@
             this.comboTipo.Location = new System.Drawing.Point(404, 28);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.Size = new System.Drawing.Size(259, 21);
-            this.comboTipo.TabIndex = 7;
+            this.comboTipo.TabIndex = 11;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
             // textNumero
@@ -321,7 +321,7 @@
             this.textNumero.Location = new System.Drawing.Point(404, 63);
             this.textNumero.Name = "textNumero";
             this.textNumero.Size = new System.Drawing.Size(259, 20);
-            this.textNumero.TabIndex = 6;
+            this.textNumero.TabIndex = 12;
             this.textNumero.TextChanged += new System.EventHandler(this.textNumero_TextChanged);
             // 
             // textTitular
@@ -329,7 +329,7 @@
             this.textTitular.Location = new System.Drawing.Point(91, 62);
             this.textTitular.Name = "textTitular";
             this.textTitular.Size = new System.Drawing.Size(173, 20);
-            this.textTitular.TabIndex = 5;
+            this.textTitular.TabIndex = 10;
             this.textTitular.TextChanged += new System.EventHandler(this.textTitular_TextChanged);
             // 
             // textBanco
@@ -337,7 +337,7 @@
             this.textBanco.Location = new System.Drawing.Point(91, 27);
             this.textBanco.Name = "textBanco";
             this.textBanco.Size = new System.Drawing.Size(173, 20);
-            this.textBanco.TabIndex = 4;
+            this.textBanco.TabIndex = 9;
             this.textBanco.TextChanged += new System.EventHandler(this.textBanco_TextChanged);
             // 
             // label4

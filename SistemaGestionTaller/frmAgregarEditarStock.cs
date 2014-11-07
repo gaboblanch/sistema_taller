@@ -316,5 +316,34 @@ namespace SistemaGestionTaller
 
             return Double.Parse(precio);
         }
+
+        private void dataGridRepuesto_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.Enter)
+            {
+                int column = dataGridRepuesto.CurrentCell.ColumnIndex;
+                int row = dataGridRepuesto.CurrentCell.RowIndex;
+                if (column < dataGridRepuesto.ColumnCount)
+                {
+                    switch(column){
+                        case 5:
+                            this.dataGridRepuesto.CurrentCell = this.dataGridRepuesto["minimo", row];
+                            break;
+                        case 7:
+                            this.dataGridRepuesto.CurrentCell = this.dataGridRepuesto["costo", row];
+                            break;
+                        case 8:
+                            this.dataGridRepuesto.CurrentCell = this.dataGridRepuesto["preciounitario", row];
+                            break;
+                        default:
+                            this.dataGridRepuesto.CurrentCell = this.dataGridRepuesto["cantidad", row];
+                            break;
+                    }
+                    
+                }
+                
+            }
+        }
     }
 }

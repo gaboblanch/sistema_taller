@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonProveedor = new System.Windows.Forms.Button();
             this.textBoxProveedor = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonEditar = new System.Windows.Forms.Button();
             this.buttonNuevoRepuesto = new System.Windows.Forms.Button();
             this.textRepuesto = new System.Windows.Forms.TextBox();
             this.buttonEliminarRepuesto = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.buttonEditar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRepuesto)).BeginInit();
@@ -118,6 +118,17 @@
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Repuesto";
+            // 
+            // buttonEditar
+            // 
+            this.buttonEditar.Enabled = false;
+            this.buttonEditar.Location = new System.Drawing.Point(573, 28);
+            this.buttonEditar.Name = "buttonEditar";
+            this.buttonEditar.Size = new System.Drawing.Size(67, 23);
+            this.buttonEditar.TabIndex = 8;
+            this.buttonEditar.Text = "Editar";
+            this.buttonEditar.UseVisualStyleBackColor = true;
+            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // buttonNuevoRepuesto
             // 
@@ -196,11 +207,13 @@
             this.dataGridRepuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellClick);
             this.dataGridRepuesto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellDoubleClick);
             this.dataGridRepuesto.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridRepuesto_CellEndEdit);
+            this.dataGridRepuesto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridRepuesto_KeyDown);
+            
             // 
             // idrepuesto
             // 
-            dataGridViewCellStyle11.NullValue = "0";
-            this.idrepuesto.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.NullValue = "0";
+            this.idrepuesto.DefaultCellStyle = dataGridViewCellStyle6;
             this.idrepuesto.HeaderText = "ID";
             this.idrepuesto.Name = "idrepuesto";
             this.idrepuesto.Visible = false;
@@ -239,9 +252,9 @@
             // cantidad
             // 
             this.cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.NullValue = "0";
-            this.cantidad.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "0";
+            this.cantidad.DefaultCellStyle = dataGridViewCellStyle7;
             this.cantidad.HeaderText = "Cantidad Entrada";
             this.cantidad.Name = "cantidad";
             this.cantidad.Width = 105;
@@ -255,9 +268,9 @@
             // minimo
             // 
             this.minimo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.NullValue = "0";
-            this.minimo.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "0";
+            this.minimo.DefaultCellStyle = dataGridViewCellStyle8;
             this.minimo.HeaderText = "Minimo";
             this.minimo.Name = "minimo";
             this.minimo.Width = 65;
@@ -265,10 +278,10 @@
             // costo
             // 
             this.costo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.costo.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.costo.DefaultCellStyle = dataGridViewCellStyle9;
             this.costo.HeaderText = "Costo";
             this.costo.Name = "costo";
             this.costo.Width = 59;
@@ -276,12 +289,12 @@
             // preciounitario
             // 
             this.preciounitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.Format = "C2";
-            dataGridViewCellStyle15.NullValue = null;
-            this.preciounitario.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.preciounitario.DefaultCellStyle = dataGridViewCellStyle10;
             this.preciounitario.HeaderText = "Precio Unitario";
             this.preciounitario.Name = "preciounitario";
             this.preciounitario.Width = 93;
@@ -316,17 +329,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(137, 20);
             this.dateTimePicker1.TabIndex = 20;
-            // 
-            // buttonEditar
-            // 
-            this.buttonEditar.Enabled = false;
-            this.buttonEditar.Location = new System.Drawing.Point(573, 28);
-            this.buttonEditar.Name = "buttonEditar";
-            this.buttonEditar.Size = new System.Drawing.Size(67, 23);
-            this.buttonEditar.TabIndex = 8;
-            this.buttonEditar.Text = "Editar";
-            this.buttonEditar.UseVisualStyleBackColor = true;
-            this.buttonEditar.Click += new System.EventHandler(this.buttonEditar_Click);
             // 
             // frmAgregarEditarStock
             // 
